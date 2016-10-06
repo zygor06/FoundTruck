@@ -47,7 +47,8 @@
 				<p>Localize o FoodTruck de sua preferência mais próximo em apenas um clique.</p>
 				<ul class="actions">
 					<li>
-						<a href="#" class="button big">Rastreio Rápido</a>
+						<!-- <a href="#" class="button big">Rastreio Rápido</a> -->
+						<a href="#" class="button big" data-toggle="modal" data-target="#mapaModal">Rastreio Rápido</a>
 					</li>
 				</ul>
 			</section>
@@ -162,6 +163,24 @@
           <p>Esqueceu sua senha? <a href="#">Recuperar senha</a></p>
         </div>
       </div>
+      
+    </div>
+  </div>
+  
+  <div class="modal fade" id="mapaModal" role="dialog">
+    <div class="modal-dialog">
+    
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>			
+				<center><h3>Found Trucks</h3></center>
+			</div>
+			<IMG SRC="images/mapa.jpg" ALT="some text" WIDTH=590 HEIGHT=395>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
       
     </div>
   </div>
