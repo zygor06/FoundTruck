@@ -1039,8 +1039,7 @@
 
 /* Banner */
 
-	#banner {
-		background-image: url(../images/dark_tint.png), url(../images/bokeh_car_lights_bg.jpg);
+	#banner {	
 		background-position: center center;
 		background-size: cover;
 		color: #ffffff;
