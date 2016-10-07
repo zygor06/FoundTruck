@@ -1,14 +1,26 @@
 
-
 $(document).ready(function(){
 	
 	//Cria variável aleatória entre 1 e 12
 	var random = Math.floor(Math.random() * 12) + 1;
 	
 	function carregarBanner(indice){
-		$("#banner").css('background-image', 'url("images/banner/img' + indice + '.png")');
+		$("#banner").css('background-image', 'url("images/banner/img' + indice + '.png")')
+					.css('transition', '2s');
 	}
+
+	var duracao = 5000; 
 	
 	carregarBanner(random);
-	console.log('Hello');
+
+	function recursiva(){
+		setTimeout(function() {
+	        var nRandom = Math.floor(Math.random() * 12) + 1;
+	        carregarBanner(nRandom);
+	        recursiva();
+		}, duracao);
+	}
+
+	recursiva();
+	
 });
