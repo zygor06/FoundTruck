@@ -5,7 +5,7 @@ $(document).ready(function(){
 	var random = Math.floor(Math.random() * 12) + 1;
 	
 	function carregarBanner(indice){
-		$("#banner").css('background-image', 'url("images/banner/img' + indice + '.png")')
+		$("#banner").css('background-image', 'url("images/banner/img' + indice + '.jpg")')
 					.css('transition', '2s');
 	}
 
