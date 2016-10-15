@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+		
 	
 	//Cria variável aleatória entre 1 e 12
 	var random = Math.floor(Math.random() * 12) + 1;
@@ -9,7 +10,7 @@ $(document).ready(function(){
 					.css('transition', '2s');
 	}
 
-	var duracao = 5000; 
+	var duracao = 10000; 
 	
 	carregarBanner(random);
 
