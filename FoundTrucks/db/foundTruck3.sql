@@ -36,7 +36,6 @@ CREATE TABLE IF NOT EXISTS `webdev`.`TB_FOODTRUCKS` (
   `lat` FLOAT(10,6) NULL,
   `lng` FLOAT(10,6) NULL,
   `id_usuarios_fk` INT NOT NULL,
-  `comentario` VARCHAR(500) NULL,
   `descricao` VARCHAR(500) NULL,
   `imagem` VARCHAR(45) NULL,
   PRIMARY KEY (`id_foodtrucks`),
@@ -74,6 +73,23 @@ CREATE TABLE IF NOT EXISTS `webdev`.`TB_ALIMENTOS_HAS_TB_FOODTRUCKS` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_tb_alimentos_has_tb_foodtrucks_tb_foodtrucks1`
+    FOREIGN KEY (`tb_foodtrucks_id_foodtrucks`)
+    REFERENCES `webdev`.`TB_FOODTRUCKS` (`id_foodtrucks`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `webdev`.`TB_COMENTARIOS`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `webdev`.`TB_COMENTARIOS` (
+  `id_comentarios` INT NOT NULL AUTO_INCREMENT,
+  `comentario` VARCHAR(500) NULL,
+  `tb_foodtrucks_id_foodtrucks` INT NOT NULL,
+  PRIMARY KEY (`id_comentarios`),
+  INDEX `fk_TB_COMENTARIOS_TB_FOODTRUCKS1_idx` (`tb_foodtrucks_id_foodtrucks` ASC),
+  CONSTRAINT `fk_TB_COMENTARIOS_TB_FOODTRUCKS1`
     FOREIGN KEY (`tb_foodtrucks_id_foodtrucks`)
     REFERENCES `webdev`.`TB_FOODTRUCKS` (`id_foodtrucks`)
     ON DELETE NO ACTION
