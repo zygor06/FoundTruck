@@ -3,7 +3,7 @@
 define('CONST_ATIVO', 1);
 define('CONST_INATIVO', 0);
 
-class PojoUsuario {
+class Usuario {
 
     private $nmCPF;
     private $teNome;

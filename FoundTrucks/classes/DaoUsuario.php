@@ -2,7 +2,7 @@
 
 require_once "Conexao.php";
 require_once "GeraLog.php";
-require_once "PojoUsuario.php";
+require_once "Usuario.php";
 
 class DaoUsuario{
 
@@ -19,7 +19,7 @@ class DaoUsuario{
         return self::$instance;
     }
 
-    public function Inserir(PojoUsuario $obUsuario) {
+    public function Inserir(Usuario $obUsuario) {
         try {
             $stSql = "INSERT INTO TB_USUARIO (		
                 TE_NOME,
@@ -34,10 +34,10 @@ class DaoUsuario{
 
             $obSql = Conexao::getInstance()->prepare($stSql);
 
-            $obSql->bindValue(":TE_NOME", $obUsuario->getTeNome());
-            $obSql->bindValue(":TE_EMAIL", $obUsuario->getTeEmail());
-            $obSql->bindValue(":TE_SENHA", $obUsuario->getTeSenha());
-            $obSql->bindValue(":CS_ATIVO", $obUsuario->getCsAtivo());
+            $obSql->bindValue(":TE_NOME", $obUsuario->getNome());
+            $obSql->bindValue(":TE_EMAIL", $obUsuario->getEmail());
+            $obSql->bindValue(":TE_SENHA", $obUsuario->getSenha());
+            $obSql->bindValue(":CS_ATIVO", $obUsuario->getAtivo());
 
 
             return $obSql->execute();
@@ -47,7 +47,7 @@ class DaoUsuario{
         }
     }
 
-    public function Editar(PojoUsuario $obUsuario) {
+    public function Editar(Usuario $obUsuario) {
         try {
             $stSql = "UPDATE TB_USUARIO set
 				TE_NOME = :TE_NOME,
@@ -59,11 +59,11 @@ class DaoUsuario{
 
             $obSql = Conexao::getInstance()->prepare($stSql);
 
-            $obSql->bindValue(":TE_NOME", $obUsuario->getTeNome());
-            $obSql->bindValue(":TE_EMAIL", $obUsuario->getTeEmail());
-            $obSql->bindValue(":TE_SENHA", $obUsuario->getTeSenha());
-            $obSql->bindValue(":CS_ATIVO", $obUsuario->getCsAtivo());
-            $obSql->bindValue(":NM_CPF", $obUsuario->getNmCPF());
+            $obSql->bindValue(":TE_NOME", $obUsuario->getNome());
+            $obSql->bindValue(":TE_EMAIL", $obUsuario->getEmail());
+            $obSql->bindValue(":TE_SENHA", $obUsuario->getSenha());
+            $obSql->bindValue(":CS_ATIVO", $obUsuario->getAtivo());
+            $obSql->bindValue(":NM_CPF", $obUsuario->getCPF());
 
             return $obSql->execute();
         } catch (Exception $e) {
@@ -74,9 +74,9 @@ class DaoUsuario{
 
     public function Deletar($nmCPF) {
         try {
-            $stSql = "DELETE FROM TB_USUARIO WHERE NM_CPF = :cod";
+            $stSql = "DELETE FROM TB_USUARIO WHERE NM_CPF = :cpf";
             $obSql = Conexao::getInstance()->prepare($stSql);
-            $obSql->bindValue(":cod", $nmCPF);
+            $obSql->bindValue(":cpf", $nmCPF);
 
             return $obSql->execute();
         } catch (Exception $e) {
@@ -85,11 +85,11 @@ class DaoUsuario{
         }
     }
 
-    public function BuscarPorCOD($nmCPF) {
+    public function BuscarPorCPF($nmCPF) {
         try {
-            $stSql = "SELECT * FROM TB_USUARIO WHERE NM_CPF = :cod";
+            $stSql = "SELECT * FROM TB_USUARIO WHERE NM_CPF = :cpf";
             $obSql = Conexao::getInstance()->prepare($stSql);
-            $obSql->bindValue(":NM_CPF", $nmCPF);
+            $obSql->bindValue(":cpf", $nmCPF);
             $obSql->execute();
             return $this->populaUsuario($obSql->fetch(PDO::FETCH_ASSOC));
         } catch (Exception $e) {
@@ -99,12 +99,12 @@ class DaoUsuario{
     }
 
 	private function populaUsuario($arRow) {
-        $obPojo = new PojoUsuario;
-        $obPojo->setNmCPF($arRow['NM_CPF']);
-        $obPojo->setTeNome($arRow['TE_NOME']);
-        $obPojo->setTeEmail($arRow['TE_EMAIL']);
-        $obPojo->setTeSenha($arRow['TE_SENHA']);
-        $obPojo->setCsAtivo($arRow['CS_ATIVO']);
+        $obPojo = new Usuario;
+        $obPojo->setCPF($arRow['NM_CPF']);
+        $obPojo->setNome($arRow['TE_NOME']);
+        $obPojo->setEmail($arRow['TE_EMAIL']);
+        $obPojo->setSenha($arRow['TE_SENHA']);
+        $obPojo->setAtivo($arRow['CS_ATIVO']);
 
         return $obPojo;
     }

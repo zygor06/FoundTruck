@@ -1,4 +1,5 @@
 <?php 
+
 //definindo as constantes de conexão
 
 define('CONST_HOST', "localhost");
