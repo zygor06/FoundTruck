@@ -1,60 +1,35 @@
 <?php 
-
-//Verificação de segurança
-$url  = $SERVER["PHP_SELF"];
-
-if(eregi("class.Upload.php", "$url")){
-	header("Location: ../index.php");
-}
-
 //definindo as constantes de conexão
 
-define('CONST_HOST', "");
-define('CONST_USER', "");
+define('CONST_HOST', "localhost");
+define('CONST_USER', "root");
 define('CONST_PASSWORD', "");
-define('CONST_DATABASE', "");
+define('CONST_DATABASE', "bd_found_truck");
 
 class Conexao{
 
-	var $query;
-	var $link;
-	var $result;
+	public static $instance;
 
-	function Conexao(){
-
+	private function __construct(){
+		echo "Objeto criado";
 	}
 
-	function connect(){
-		$this->link = mysql_connect(CONST_HOST, CONST_USER, CONST_PASSWORD);
+	public static function getInstance(){
 
-		if(!$this->link){
-			echo "Falha na conexao com o Bando de Dados!<br />";
-			echo "Erro: " . mysql_error();
-			die();
-		}else if(!mysql_select_db(CONST_DATABASE, $this->link)){
-			echo "O Banco de Dados solicitado não pode ser aberto!<br />";
-			echo "Erro: " . mysql_error();
-			die();
-		}
-	}
+		$config = 'mysql:host='.CONST_HOST.';dbname='.CONST_DATABASE.;
 
-	function disconnect(){
-		return mysql_close($this->link);
-	}
+		if(!isset(self::$instance)){
+			self::$instance = new PDO($config, CONST_USER, CONST_PASSWORD, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+			self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            self::$instance->setAttribute(PDO::ATTR_ORACLE_NULLS, PDO::NULL_EMPTY_STRING);
+        }
 
-	function executeQuery($query){
-		$this->connect();
-		$this->query = $query;
+        return self::$instance;
 
-		if($this->result = mysql_query($this->query)){
-			$this->disconnect();
-			return $this->result;
-		}else{
-			echo "Ocorreu um erro na execução da SQL";
-			echo "Erro :" . mysql_error();
-			die();
-			disconnect();
-		}
 	}
 
 }
+
+
+
+?>
