@@ -5,19 +5,19 @@ class Alimento {
     private $teAlimento;
     private $teImagem;
 
-    public setAlimento($alimento){
+    function setAlimento($alimento){
         $this->teAlimento = $alimento;
     }
 
-    public getAlimento(){
+    public function getAlimento(){
         return $this->alimento;
     }
 
-    public setImagem($imagem){
+    public function setImagem($imagem){
         $this->teImagem = $imagem;
     }
 
-    public getImagem(){
+    public function getImagem(){
         return $this->imagem;
     }
 
