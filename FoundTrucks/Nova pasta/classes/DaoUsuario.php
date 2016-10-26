@@ -94,19 +94,6 @@ class DaoUsuario{
         }
     }
 
-    public function BuscarPorEmail($teEmail) {
-        try {
-            $stSql = "SELECT * FROM TB_USUARIO WHERE TE_EMAIL = :teEmail";
-            $obSql = Conexao::getInstance()->prepare($stSql);
-            $obSql->bindValue(":teEmail", $teEmail);
-            $obSql->execute();
-            return $this->populaUsuario($obSql->fetch(PDO::FETCH_ASSOC));
-        } catch (Exception $e) {
-            print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
-            GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
-        }
-    }
-
 	private function populaUsuario($arRow) {
         $obPojo = new Usuario;
         $obPojo->setCPF($arRow['NR_CPF']);
@@ -115,7 +102,7 @@ class DaoUsuario{
         $obPojo->setSenha($arRow['TE_SENHA']);
         $obPojo->setAtivo($arRow['CS_ATIVO']);
 
-        echo "Populado com sucesso!";
+        echo "Populado com sucesso1";
 
         return $obPojo;
     }
