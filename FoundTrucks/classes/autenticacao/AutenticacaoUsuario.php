@@ -4,8 +4,8 @@
 
     session_start();
 
-    $email = isset($_POST['teEmail']) ? $_POST['teEmail'] : false;
-    $senha = isset($_POST['teSenha']) ? $_POST['teSenha'] : false;
+    $email = isset($_POST['teEmail']) ? $_POST['teEmail'] : null;
+    $senha = isset($_POST['teSenha']) ? $_POST['teSenha'] : null;
     $teUsuario;
 
     try{
@@ -21,11 +21,11 @@
         <title>Autenticando Usuário</title>
         <script>
                 function loginsuccessfully(){
-                    setTimeout("window.location='AreaRestrita.php'", 5000);
+                    setTimeout("window.location='../../AreaRestrita/index.php'", 5000);
                 }
 
                 function loginfailed(){
-                    setTimeout("window.location='../teste.php'", 5000);
+                    setTimeout("window.location='../../teste.php'", 5000);
                     alert("Usuário ou senha incorretos.");
                 }
         </script>
@@ -33,8 +33,6 @@
     <body>
 
 <?php
-
-    $autentica;
 
     if($email == $obUsuario->getEmail() && $senha == $obUsuario->getSenha()){
         $_SESSION["teEmail"] = $_POST["teEmail"];

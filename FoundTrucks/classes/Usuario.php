@@ -51,9 +51,15 @@ class Usuario {
         if($csAtivo){
             $this->csAtivo = CONST_ATIVO;
         }else{
-
+            $this->csAtivo = CONST_INATIVO;
         }
+    }
 
+    public function verificaNull(){
+        if(!isset($this->nrCPF) && !isset($this->teNome) && !isset($this->teEmail) && !isset($this->teSenha) && !isset($this->csAtivo)){
+            return true;
+        }
+        return false;
     }
 
 }

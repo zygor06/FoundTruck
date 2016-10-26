@@ -10,7 +10,7 @@ $(document).ready(function(){
 					.css('transition', '2s');
 	}
 
-	var duracao = 10000; 
+	var duracao = 10000;
 	
 	carregarBanner(random);
 
