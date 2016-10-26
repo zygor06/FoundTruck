@@ -1,6 +1,9 @@
 <?php
     include "DaoUsuario.php";
 
+
+    session_start();
+
     $email = isset($_POST['teEmail']) ? $_POST['teEmail'] : false;
     $senha = isset($_POST['teSenha']) ? $_POST['teSenha'] : false;
     $teUsuario;
@@ -8,12 +11,13 @@
     try{
         $obUsuario = DaoUsuario::getInstance()->BuscarPorEmail($email);
     }catch(Exception $e){
-
+        die();
     }
 ?>
 
 <html>
     <head>
+        <meta charset="UTF-8" />
         <title>Autenticando Usuário</title>
         <script>
                 function loginsuccessfully(){
@@ -33,10 +37,9 @@
     $autentica;
 
     if($email == $obUsuario->getEmail() && $senha == $obUsuario->getSenha()){
-        session_start();
-        $_SESSION['teEmail'] = $_POST['teEmail'];
-        $_SESSION['teSenha'] = $_POST['teSenha'];
-        $_SESSION['teUsuario'] = $obUsuario->getNome();
+        $_SESSION["teEmail"] = $_POST["teEmail"];
+        $_SESSION["teSenha"] = $_POST["teSenha"];
+        $_SESSION["teUsuario"] = $obUsuario->getNome();
         echo "<script>loginsuccessfully();</script>";
     }else{
         echo "<script>loginfailed();</script>";

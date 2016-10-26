@@ -122,7 +122,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teste.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="teste.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/teste.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="728">
@@ -132,11 +132,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AutenticacaoUsuario.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AutenticacaoUsuario.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/AutenticacaoUsuario.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+            <state relative-caret-position="-73">
+              <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -145,8 +145,8 @@
       <file leaf-file-name="AreaRestrita.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/AreaRestrita.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="17">
+              <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -156,7 +156,7 @@
         <entry file="file://$PROJECT_DIR$/classes/Conexao.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+              <caret line="19" column="75" selection-start-line="19" selection-start-column="75" selection-end-line="19" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -165,19 +165,19 @@
       <file leaf-file-name="DaoUsuario.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/DaoUsuario.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="626">
-              <caret line="117" column="35" selection-start-line="117" selection-start-column="35" selection-end-line="117" selection-end-column="35" />
+            <state relative-caret-position="680">
+              <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
               <folding>
                 <element signature="n#Inserir#0;n#DaoUsuario#0;n#!!top" expanded="false" />
                 <element signature="n#Editar#0;n#DaoUsuario#0;n#!!top" expanded="false" />
                 <element signature="n#Deletar#0;n#DaoUsuario#0;n#!!top" expanded="false" />
                 <element signature="n#BuscarPorCPF#0;n#DaoUsuario#0;n#!!top" expanded="false" />
                 <element signature="n#BuscarPorEmail#0;n#DaoUsuario#0;n#!!top" expanded="false" />
-                <marker date="1477505937376" expanded="true" signature="450:588" ph="INSERT INTO TB_USUARIO... " />
-                <marker date="1477505937376" expanded="true" signature="1484:1682" ph="UPDATE TB_US... " />
-                <marker date="1477505937376" expanded="true" signature="2486:2528" ph="DELETE FROM " />
-                <marker date="1477505937376" expanded="true" signature="3048:3092" ph="SELECT * FRO... TB_USUARIO" />
-                <marker date="1477505937376" expanded="true" signature="3682:3732" ph="SELECT * FRO... TB_USUARIO" />
+                <marker date="1477508879702" expanded="true" signature="450:588" ph="INSERT INTO TB_USUARIO... " />
+                <marker date="1477508879702" expanded="true" signature="1484:1682" ph="UPDATE TB_US... " />
+                <marker date="1477508879702" expanded="true" signature="2486:2528" ph="DELETE FROM " />
+                <marker date="1477508879702" expanded="true" signature="3048:3092" ph="SELECT * FRO... TB_USUARIO" />
+                <marker date="1477508879702" expanded="true" signature="3682:3732" ph="SELECT * FRO... TB_USUARIO" />
               </folding>
             </state>
           </provider>
@@ -189,10 +189,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/classes/DaoUsuario.php" />
         <option value="$PROJECT_DIR$/teste.php" />
         <option value="$PROJECT_DIR$/classes/logs/AreaRestrita.php" />
+        <option value="$PROJECT_DIR$/classes/Conexao.php" />
         <option value="$PROJECT_DIR$/classes/AutenticacaoUsuario.php" />
+        <option value="$PROJECT_DIR$/classes/DaoUsuario.php" />
+        <option value="$PROJECT_DIR$/classes/AreaRestrita.php" />
       </list>
     </option>
   </component>
@@ -341,18 +343,18 @@
       <option name="presentableId" value="Default" />
       <updated>1477494079927</updated>
       <workItem from="1477494088688" duration="954000" />
-      <workItem from="1477503429483" duration="3467000" />
+      <workItem from="1477503429483" duration="5477000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4421000" />
+    <option name="totallyTimeSpent" value="6431000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1010" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1296" height="1010" extended-state="7" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.303125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.253125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -474,41 +476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/DaoUsuario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="117" column="35" selection-start-line="117" selection-start-column="35" selection-end-line="117" selection-end-column="35" />
-          <folding>
-            <element signature="n#Inserir#0;n#DaoUsuario#0;n#!!top" expanded="false" />
-            <element signature="n#Editar#0;n#DaoUsuario#0;n#!!top" expanded="false" />
-            <element signature="n#Deletar#0;n#DaoUsuario#0;n#!!top" expanded="false" />
-            <element signature="n#BuscarPorCPF#0;n#DaoUsuario#0;n#!!top" expanded="false" />
-            <element signature="n#BuscarPorEmail#0;n#DaoUsuario#0;n#!!top" expanded="false" />
-            <marker date="1477505937376" expanded="true" signature="450:588" ph="INSERT INTO TB_USUARIO... " />
-            <marker date="1477505937376" expanded="true" signature="1484:1682" ph="UPDATE TB_US... " />
-            <marker date="1477505937376" expanded="true" signature="2486:2528" ph="DELETE FROM " />
-            <marker date="1477505937376" expanded="true" signature="3048:3092" ph="SELECT * FRO... TB_USUARIO" />
-            <marker date="1477505937376" expanded="true" signature="3682:3732" ph="SELECT * FRO... TB_USUARIO" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Conexao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/AreaRestrita.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/teste.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -604,18 +571,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/teste.php">
+    <entry file="file://$PROJECT_DIR$/classes/DaoUsuario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
-          <caret line="45" column="2" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
+        <state relative-caret-position="680">
+          <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding>
+            <element signature="n#Inserir#0;n#DaoUsuario#0;n#!!top" expanded="false" />
+            <element signature="n#Editar#0;n#DaoUsuario#0;n#!!top" expanded="false" />
+            <element signature="n#Deletar#0;n#DaoUsuario#0;n#!!top" expanded="false" />
+            <element signature="n#BuscarPorCPF#0;n#DaoUsuario#0;n#!!top" expanded="false" />
+            <element signature="n#BuscarPorEmail#0;n#DaoUsuario#0;n#!!top" expanded="false" />
+            <marker date="1477508879702" expanded="true" signature="450:588" ph="INSERT INTO TB_USUARIO... " />
+            <marker date="1477508879702" expanded="true" signature="1484:1682" ph="UPDATE TB_US... " />
+            <marker date="1477508879702" expanded="true" signature="2486:2528" ph="DELETE FROM " />
+            <marker date="1477508879702" expanded="true" signature="3048:3092" ph="SELECT * FRO... TB_USUARIO" />
+            <marker date="1477508879702" expanded="true" signature="3682:3732" ph="SELECT * FRO... TB_USUARIO" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/AreaRestrita.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Conexao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="75" selection-start-line="19" selection-start-column="75" selection-end-line="19" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/AutenticacaoUsuario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+        <state relative-caret-position="-73">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teste.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="45" column="2" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
           <folding />
         </state>
       </provider>

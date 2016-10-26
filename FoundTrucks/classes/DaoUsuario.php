@@ -115,7 +115,7 @@ class DaoUsuario{
         $obPojo->setSenha($arRow['TE_SENHA']);
         $obPojo->setAtivo($arRow['CS_ATIVO']);
 
-        echo "Populado com sucesso!";
+        echo "Carregando...";
 
         return $obPojo;
     }

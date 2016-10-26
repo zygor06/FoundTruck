@@ -1,0 +1,6 @@
+[26-10-2016, 20:54:34] Erro: Código: 3D000 Mensagem: SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected
+
+[26-10-2016, 20:54:51] Erro: Código: 1049 Mensagem: SQLSTATE[HY000] [1049] Unknown database 'db_founddtruck'
+
+[26-10-2016, 20:55:01] Erro: Código: 1049 Mensagem: SQLSTATE[HY000] [1049] Unknown database 'db_founddtruck'
+

@@ -5,7 +5,7 @@
 define('CONST_HOST', "localhost");
 define('CONST_USER', "root");
 define('CONST_PASSWORD', "root");
-define('CONST_DATABASE', "BD_FOUNDTRUCK");
+define('CONST_DATABASE', "DB_FOUNDTRUCK");
 
 class Conexao{
 
