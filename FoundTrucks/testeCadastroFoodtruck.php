@@ -14,14 +14,15 @@ var lat = document.getElementById("lat");
 var longt = document.getElementById("long")
 function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(returnPosition);
     } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
 
-function returnLat(position){
+function returnPosition(position){
 	lat.value = position.coords.latitude;
+	longt.value = position.coords.longitude;
 }
 
 function returnLong(position){

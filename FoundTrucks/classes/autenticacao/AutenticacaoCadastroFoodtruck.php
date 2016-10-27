@@ -4,7 +4,7 @@ include "../Foodtruck.php";
 include "../DaoFoodtruck.php";
 include "../Debug.php";
 
-$obFoodtruck;
+$obFoodtruck = new Foodtruck();
 
 $nome = isset($_POST['teNome']) ? $_POST['teNome'] : null;
 $lat = isset($_POST['nrLat']) ? $_POST['nrLat'] : null;
@@ -18,7 +18,7 @@ $ativo = 1;
 $obFoodtruck->setNome($nome);
 $obFoodtruck->setLat($lat);
 $obFoodtruck->setLong($long);
-$obFoodtruck->setUsuario($usuario);
+$obFoodtruck->setCpfUsuario($usuario);
 $obFoodtruck->setDescricao($descricao);
 $obFoodtruck->setImagem($imagem);
 $obFoodtruck->setAtivo($ativo);
