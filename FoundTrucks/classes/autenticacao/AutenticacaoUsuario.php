@@ -18,14 +18,14 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Autenticando Usuário</title>
+        <title>Autenticando Usu�rio</title>
         <script>
                 function loginsuccessfully(){
                     setTimeout("window.location='../../AreaRestrita/index.php'", 5000);
                 }
 
                 function loginfailed(){
-                    setTimeout("window.location='../../teste.php'", 5000);
+                    setTimeout("window.location='../../testeLogin.php'", 5000);
                     alert("Usuário ou senha incorretos.");
                 }
         </script>

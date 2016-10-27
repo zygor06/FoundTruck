@@ -19,8 +19,6 @@ $obUsuario->setEmail($email);
 $obUsuario->setSenha($senha);
 $obUsuario->setAtivo(1);
 
-echo $obUsuario->verificaNull();
-
 if($obUsuario->verificaNull()){
     echo "<script>falha()</script>";
 }
@@ -34,11 +32,11 @@ DaoUsuario::getInstance()->inserir($obUsuario);
     <title>Autenticando Cadastro</title>
     <script>
         function sucesso(){
-            setTimeout("window.location='../../index.php'", 5000);
+            setTimeout("window.location='../../index.php'", 3000);
         }
 
         function falha(){
-            setTimeout("window.location='../../cadastro.php'", 5000);
+            setTimeout("window.location='../../testeCadastro.php'", 3000);
             alert("Usuário ou senha incorretos.");
         }
     </script>

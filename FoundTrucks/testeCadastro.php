@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta>
-        <title>Cadastro de Usu√°rio</title>
+        <title>Cadastro de Usu·rio</title>
         <style>
             label{
                 display: inline-block;

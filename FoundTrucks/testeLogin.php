@@ -9,7 +9,7 @@
         </style>
     </head>
     <body>
-        <h2>Formul√°rio de Login</h2>
+        <h2>Formul·rio de Login</h2>
         <form name="formlogin" method="post" action="classes/autenticacao/AutenticacaoUsuario.php">
             <label>E-mail: </label><input type="text"  name="teEmail"/><br/>
             <label>Senha: </label><input type="password" name="teSenha" /><br/>
@@ -17,4 +17,3 @@
         </form>
     </body>
 </html>
-
