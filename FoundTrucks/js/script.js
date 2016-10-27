@@ -11,7 +11,7 @@ $(document).ready(function(){
 	}
 
 	var duracao = 10000;
-	
+	!
 	carregarBanner(random);
 
 	function recursiva(){
