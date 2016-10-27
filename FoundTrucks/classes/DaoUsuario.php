@@ -67,6 +67,21 @@ class DaoUsuario{
             GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
         }
     }
+    
+    public function retornarTodos() {
+    	try {
+    		$stSql = "SELECT * FROM TB_USUARIO;";
+    
+    		$obSql = Conexao::getInstance()->prepare($stSql);    
+    		$obSql->execute();
+    		
+    		return $obSql->fetchAll(PDO::FETCH_ASSOC);
+    		
+    	} catch (Exception $e) {
+    		print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
+    		GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+    	}
+    }
 
     public function Deletar($nrCPF) {
         try {
