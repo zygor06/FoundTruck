@@ -1238,3 +1238,27 @@
 	#logo-name{
 		padding-left: 100px;
 	}
+
+/* Paginação */
+	ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    float: right;
+	}
+
+	ul.pagination li {display: inline;}
+
+	ul.pagination li a {
+	    color: black;
+	    float: left;
+	    padding: 8px 16px;
+	    text-decoration: none;
+	    border-radius: 5px;
+	}
+
+	ul.pagination li a.active {
+	    background-color: #3CADD4;
+	    color: white;
+	    border-radius: 5px;
+	}
