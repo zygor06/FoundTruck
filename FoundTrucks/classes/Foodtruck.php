@@ -80,4 +80,8 @@ class Foodtruck{
 		return $this->csAtivo;
 	}
 	
+	public function verificaNull(){
+		return true;
+	}
+	
 }?>

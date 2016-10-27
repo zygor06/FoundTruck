@@ -15,13 +15,13 @@ $imagem = isset($_POST['teImagem']) ? $_POST['teImagem'] : null;
 $ativo = 1;
 
 
-$obTemp->setNome();
-$obTemp->setLat();
-$obTemp->setLong();
-$obTemp->setUsuario();
-$obTemp->setDescricao();
-$obTemp->setImagem();
-$obTemp->setAtivo();
+$obFoodtruck->setNome($nome);
+$obFoodtruck->setLat($lat);
+$obFoodtruck->setLong($long);
+$obFoodtruck->setUsuario($usuario);
+$obFoodtruck->setDescricao($descricao);
+$obFoodtruck->setImagem($imagem);
+$obFoodtruck->setAtivo($ativo);
 
 //TE_NOME, NR_LAT, NR_LONG, NR_CPF_USUARIO, TE_DESCRICAO, TE_IMAGEM, CS_ATIVO 
 
