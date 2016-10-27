@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+define('CONST_ATIVO', 1);
+define('CONST_INATIVO', 0);
 
 class Foodtruck{
 
@@ -8,7 +11,7 @@ class Foodtruck{
 	private $nmLong;
 	private $teDescricao;
 	private $teImagem;
-	private $nmCpfUsuario;
+	private $nrCpfUsuario;
 	private $csAtivo;
 
 	public function setId($id){
@@ -61,11 +64,11 @@ class Foodtruck{
 	}
 
 	public function setCpfUsuario($cpfUsuario){
-		$this->nmCpfUsuario = $cpfUsuario;
+		$this->nrCpfUsuario = $cpfUsuario;
 	}
 
 	public function getCpfUsuario(){
-		return $this->cpfUsuario;
+		return $this->nrCpfUsuario;
 	}
 	
 	public function setAtivo($csAtivo) {

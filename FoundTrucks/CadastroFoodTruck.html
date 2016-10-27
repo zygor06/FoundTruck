@@ -71,21 +71,29 @@
 					<header class="major">
 						<h2>Informações sobre seu foodtruck</h2>
 					</header>
-					Nome do Foodtruck<input type="text" name="nome_foodtruck" value="Nome do seu foodtruck" size="50"/>
-					Email para login e contato<input type="email" name="email_login" value="Email" size="50"/>
-					Senha:<input type="password" name="senha" value="senha" size="30"/>
-					Responsável pelo Foodtruck<input type="text" name="responsavel" value="Responsável" size="40"/>
-					<br>
-					Tipo alimento vendido<br>
-					<section title="checkbox" class="checkbox">
-					<input type="checkbox" name="alimento" value="hamburguer"/>Hamburguer<br>
-					<input type="checkbox" name="alimento" value="sanduíches"/>Sanduíches<br>
-					<input type="checkbox" name="alimento" value="massas"/>Massas<br>
-					<input type="checkbox" name="alimento" value="bebidas"/>Bebidas<br>
-					<input type="checkbox" name="alimento" value="vegetariano"/>Vegetariano<br>
-					<input type="checkbox" name="alimento" value="vegano"/>Vegano<br>
-					<input type="checkbox" name="alimento" value="doces"/>Doces<br>
-					</section>
+					<form>
+						Nome do Foodtruck<input type="text" name="nome_foodtruck" value="Nome do seu foodtruck" size="50"/>
+						Email para login e contato<input type="email" name="email_login" value="Email" size="50"/>
+						Senha:<input type="password" name="senha" value="senha" size="30"/>
+						Responsável pelo Foodtruck<input type="text" name="responsavel" value="Responsável" size="40"/>
+						<br>
+						Tipo alimento vendido<br>
+						<div class="checkbox">
+							<label><input type="checkbox" name="alimento" value="hamburguer"/>Hamburguer</label>
+							<label><input type="checkbox" name="alimento" value="sanduíches"/>Sanduíches</label>
+						<label><input type="checkbox" name="alimento" value="massas"/>Massas</label>
+						<label><input type="checkbox" name="alimento" value="bebidas"/>Bebidas</label>
+						<label><input type="checkbox" name="alimento" value="vegetariano"/>Vegetariano</label>
+						<label><input type="checkbox" name="alimento" value="vegano"/>Vegano</label>
+						<label><input type="checkbox" name="alimento" value="doces"/>Doces</label>
+					</div>
+
+
+					</form>
+
+					<form>
+						<label><input type="checkbox" value="">Comida</label>
+					</form>
 					
 					Obs: Você pode selecionar mais de um tipo para atrair mais clientes
 					
