@@ -2,61 +2,82 @@
 
 class Foodtruck{
 
+	private $nrId;
 	private $teNome;
 	private $nmLat;
 	private $nmLong;
 	private $teDescricao;
 	private $teImagem;
 	private $nmCpfUsuario;
+	private $csAtivo;
 
-
-	public setNome($nome){
+	public function setId($id){
+		$this->nrId = $id;
+	}
+	
+	public function getId(){
+		return $this->nrId;
+	}
+	
+	public function setNome($nome){
 		$this->teNome = $nome;
 	}
 
-	public getNome(){
+	public function getNome(){
 		return $this->teNome;
 	}
 
-	public setLat($lat){
+	public function setLat($lat = null){
 		$this->nmLat = $lat;
 	}
 
-	public getLat(){
+	public function getLat(){
 		return $this->nmLat;
 	}
 
-	public setLong($long){
+	public function setLong($long = null){
 		$this->nmLong = $long;
 	}
 
-	public getLong(){
+	public function getLong(){
 		return $this->nmLong;
 	}
 
-	public setDescricao($descricao){
+	public function setDescricao($descricao){
 		$this->teDescricao = $descricao;
 	}
 
-	public getDescricao(){
+	public function getDescricao(){
 		return $this->teDescricao;
 	}
 
 
-	public setImagem($imagem){
+	public function setImagem($imagem){
 		$this->teImagem = $imagem;
 	}
 
-	public getImagem(){
+	public function getImagem(){
 		return $this->teImagem;
 	}
 
-	public setCpfUsuario($cpfUsuario){
+	public function setCpfUsuario($cpfUsuario){
 		$this->nmCpfUsuario = $cpfUsuario;
 	}
 
-	public getCpfUsuario(){
+	public function getCpfUsuario(){
 		return $this->cpfUsuario;
+	}
+	
+	public function setAtivo($csAtivo) {
+		if($csAtivo){
+			$this->csAtivo = CONST_ATIVO;
+		}else{
+			$this->csAtivo = CONST_INATIVO;
+		}
+	}
+	
+	public function getAtivo(){
+		return $this->csAtivo;
 	}
 	
 }?>
