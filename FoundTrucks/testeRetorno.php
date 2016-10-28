@@ -1,21 +1,30 @@
 <?php
-include "classes/DaoUsuario.php";
+include "classes/DaoFoodtruck.php";
 
-$cars = DaoUsuario::getInstance ()->retornarTodos ();
+$foodtrucks = DaoFoodtruck::getInstance ()->retornarLatLong();
 ?>
 
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Autenticando Usu�rio</title>
+<title>Teste Retorno</title>
 
 </head>
 <body>
 
-	<?php
-	
-	print_r($cars);
-	
+	<?php 
+
+		for($i = 0; $i < count($foodtrucks[0]) ; $i++){
+			$nome = $foodtrucks[$i]['TE_NOME'];
+			$lat = $foodtrucks[$i]['NR_LAT'];
+			$long = $foodtrucks[$i]['NR_LONG'];
+			$alimento = $foodtrucks[$i]['TE_ALIMENTO'];
+
+			echo "$nome: latitude: $lat, longitude: $long, alimento: $alimento";
+			echo "<br>";
+
+		}
+
 	?>
 
 </body>
