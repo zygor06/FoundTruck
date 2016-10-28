@@ -1,3 +1,12 @@
+<?php 
+
+	$arAtributos = DaoFoodtruck::getInstance()->retornarLatLong();
+?>	
+	
+					
+	}
+
+
 <!DOCTYPE html>
 <html lang='pt-br'>
 	<head>
@@ -13,7 +22,28 @@
 		<script src='js/skel.min.js'></script>
 		<script src='js/skel-layers.min.js'></script>
 		<script src='js/init.js'></script>
-		<script src='js/script.js'></script>	
+		<script src='js/script.js'></script>
+		
+		<?php 
+		
+		echo "	<script>
+					var locations = [";
+		for($i = 0; $i < count($arAtributos[]); $i++){
+			
+			$nome = $arAtributos[$i]['TE_NOME'];
+			$lat =  $arAtributos[$i]['NR_LAT'];
+			$long = $arAtributos[$i]['NR_LONG'];				
+			
+			if(!(count($arAtributos[0]) % count($arAtributos[0])) == 0){
+				echo "['$nome', $lat, $long],";
+			}else{
+				echo "['$nome', $lat, $long]];";
+			}
+			
+			
+		}
+		
+		?>
 
 		<noscript>
 			<link rel='stylesheet' href='css/skel.css' />
