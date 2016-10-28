@@ -25,7 +25,7 @@
 		
 		<script src="js/bootstrap.min.js"></script>
 		
-		<style>#map-container { height: 450px }</style>
+		<!-- <style>#two { height: 30% }</style>			 -->
 
 	</head>
 	
@@ -62,8 +62,7 @@
 
 		<!-- One -->
 			<section id="one" class="wrapper style1 special">			
-				<div class="container">
-				
+				<div class="container">				
 					<header class="major">
 						<h2>Sua fome não pode esperar</h2>
 						<p>Encontre o <strong>FoodTruck</strong> mais próximo de você já!</p>
@@ -95,13 +94,70 @@
 			</section>
 
 		<!-- Two -->
-			<section id="two" class="wrapper style2 special">
-				
-				<div id="map"></div>
-				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmrExWndfKz7CdR7vZADNbCbKj7GgX4So"></script>
+			<?php
+			include "classes/DaoFoodtruck.php";
+			$foodtrucks = DaoFoodtruck::getInstance ()->retornarLatLong();	
+			?>
+			<!-- <section id="two" class="wrapper style2 special">				 -->
+			<section id="two">				
+				<div id="map"></div>				
+			
 				<link href='css/mapa.css' rel='stylesheet' type='text/css'>
-				<script src="js/mapa.js"></script>
-				
+				<script>
+					$(function () {
+						function initMap() {
+							var foodtrucks = JSON.parse( '<?php echo json_encode($foodtrucks) ?>' );							
+							var centro = new google.maps.LatLng(-15.793750, -47.882862);		        
+							var mapCanvas = document.getElementById('map');
+							var mapOptions = {
+								center: centro,
+								zoom: 13,
+								panControl: false,
+								scrollwheel: true,
+								mapTypeId: google.maps.MapTypeId.ROADMAP
+							}
+							var map = new google.maps.Map(mapCanvas, mapOptions);
+							var markerImage = 'images/marcador.png';
+							<!-- var styles = [{"featureType": "landscape", "stylers": [{"saturation": -100}, {"lightness": 65}, {"visibility": "on"}]}, {"featureType": "poi", "stylers": [{"saturation": -100}, {"lightness": 51}, {"visibility": "simplified"}]}, {"featureType": "road.highway", "stylers": [{"saturation": -100}, {"visibility": "simplified"}]}, {"featureType": "road.arterial", "stylers": [{"saturation": -100}, {"lightness": 30}, {"visibility": "on"}]}, {"featureType": "road.local", "stylers": [{"saturation": -100}, {"lightness": 40}, {"visibility": "on"}]}, {"featureType": "transit", "stylers": [{"saturation": -100}, {"visibility": "simplified"}]}, {"featureType": "administrative.province", "stylers": [{"visibility": "off"}]}, {"featureType": "water", "elementType": "labels", "stylers": [{"visibility": "on"}, {"lightness": -25}, {"saturation": -100}]}, {"featureType": "water", "elementType": "geometry", "stylers": [{"hue": "#ffff00"}, {"lightness": -25}, {"saturation": -97}]}]; -->
+							/* map.set('styles', styles); */
+							
+							<!-- Inserção dos marcadores -->
+							for (i = 0; i < foodtrucks.length; i++) { 							
+								var lat = foodtrucks[i]['NR_LAT'];
+								var lng = foodtrucks[i]['NR_LONG'];		
+								var nome = foodtrucks[i]['TE_NOME'];
+								var alimento = foodtrucks[i]['TE_ALIMENTO'];
+								var descricao = foodtrucks[i]['TE_DESCRICAO'];								
+								var marcador = new google.maps.LatLng(lat, lng);
+								var contentString = '<div class="info-window">' +
+										'<h3>'+ nome + '</h3>' +
+										'<h4>'+ alimento + '</h4>' +
+										'<div class="info-content">' +
+										'<p>'+ descricao + '</p>' +
+										'</div>' +
+										'</div>';	
+								var marker = new google.maps.Marker({
+									position: marcador,
+									map: map,
+									icon: markerImage,
+									title: nome + ': ' + alimento
+								});
+							
+								var infowindow = new google.maps.InfoWindow()
+								
+								google.maps.event.addListener(marker,'click', (function(marker,contentString,infowindow){ 
+									return function() {
+									infowindow.setContent(contentString);
+									infowindow.open(map,marker);
+									};
+								})(marker,contentString,infowindow));
+								
+							}
+						}
+						google.maps.event.addDomListener(window, 'load', initMap);
+					});					
+				</script>
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmrExWndfKz7CdR7vZADNbCbKj7GgX4So"></script>				
 			</section>
 
 		<!-- Footer -->

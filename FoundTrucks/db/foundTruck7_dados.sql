@@ -15,6 +15,12 @@ UPDATE TB_FOODTRUCK SET TE_DESCRICAO = "Cervejas especiais" WHERE NR_ID = "4";
 /*ATUALIZAÇÃO DA LOCALIZAÇÃO DO FOODTRUCK*/
 UPDATE TB_FOODTRUCK SET NR_LAT = "-15.781302" , NR_LONG = "-47.922025" WHERE NR_ID = "4";
 
+/*ATUALIZAÇÃO DA DESCRIÇÃO DOS FOODTRUCKS*/
+UPDATE TB_FOODTRUCK SET TE_DESCRICAO = "Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Si num tem leite então bota uma pinga aí cumpadi!" WHERE NR_ID = "1";
+UPDATE TB_FOODTRUCK SET TE_DESCRICAO = "Per aumento de cachacis, eu reclamis. Ta deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.”" WHERE NR_ID = "2";
+UPDATE TB_FOODTRUCK SET TE_DESCRICAO = "Suco de cevadiss deixa as pessoas mais interessantiss. Quem num gosti di mum que vai caçá sua turmis!" WHERE NR_ID = "3";
+
+
 
 /*ATUALIZAÇÃO DA IMAGEM DO FOODTRUCK*/
 UPDATE TB_FOODTRUCK SET TE_IMAGEM = "images/imagem.png" WHERE NR_ID = "1";
@@ -44,9 +50,7 @@ INSERT INTO TB_COMENTARIO (TE_COMENTARIO, NR_ID_FOODTRUCK, DT_DATA, TE_AUTOR) VA
 	rip-offs, another point is that Apple will only get better to whom profit, on the
 	whole profit suddenly gorgeous, to sum up gorgeous, afterwards delay in getting 
 	Ice Cream Sandwich, prior to user experience sucks, soon profit, despite Android
-	geek, exactly because profit, apparently iCloud in contrast genius.", 2, "2000-10-10", "Cicrano");
-
-
+	geek, exactly because profit, apparently iCloud in contrast genius.", 2, "2000-10-10", "Cicrano");   
 
 
 INSERT INTO TB_COMENTARIO (TE_COMENTARIO, NR_ID_FOODTRUCK, DT_DATA, TE_AUTOR) VALUES
@@ -64,11 +68,9 @@ Nesse select, o resultado será uma tabela mostrando que o foodtruck 1 vende os 
 e que o foodtruck 2 vende o alimento 2.
 */
 
-SELECT TB_FOODTRUCK.TE_NOME, TB_ALIMENTO.TE_ALIMENTO FROM TB_FOODTRUCK 
-	JOIN TB_VENDE JOIN TB_ALIMENTO 
-	ON TB_FOODTRUCK.NR_ID = TB_VENDE.TB_FOODTRUCK_NR_ID
-	AND TB_VENDE.TB_ALIMENTO_NR_ID = TB_ALIMENTO.NR_ID;
+SELECT TB_FOODTRUCK.TE_NOME, TB_ALIMENTO.TE_ALIMENTO FROM TB_FOODTRUCK JOIN TB_VENDE JOIN TB_ALIMENTO ON TB_FOODTRUCK.NR_ID = TB_VENDE.TB_FOODTRUCK_NR_ID AND TB_VENDE.TB_ALIMENTO_NR_ID = TB_ALIMENTO.NR_ID;
 	
+
 
 
 	
