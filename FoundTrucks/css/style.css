@@ -1270,3 +1270,8 @@
 	    color: white;
 	    border-radius: 5px;
 	}
+	
+	.center{
+		float:none;
+		margin: 0 auto;
+	}
