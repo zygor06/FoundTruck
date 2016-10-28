@@ -1,5 +1,3 @@
-SELECT * FROM tb_alimento;
-
 USE DB_FOUNDTRUCK;
 
 /*INSERÇÃO DE USUÁRIOS: */
