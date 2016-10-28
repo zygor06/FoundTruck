@@ -53,7 +53,7 @@
 					<li>
 						<!-- <a href="#" class="button big">Rastreio Rápido</a> -->
 						<!--<a href="#" class="button big" data-toggle="modal" data-target="#mapaModal">Rastreio Rápido</a>-->
-						<a href="#mapmodals" class="button big" data-toggle="modal" data-target="#mapmodals">Rastreio Rápido</a>									
+						<a href="#two" class="button big">Rastreio Rápido</a>	
 					</li>
 				</ul>
 			</section>
@@ -93,45 +93,70 @@
 			</section>
 
 		<!-- Two -->
-			<section id="two" class="wrapper style2 special">
-				<div class="container">
-					<header class="major">
-						<h2>Lorem ipsum dolor sit</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, autem.</p>
-					</header>
-					<section class="profiles">
-						<div class="row">
-							<section class="3u 6u(medium) 12u$(xsmall) profile">
-								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Lorem ipsum</h4>
-								<p>Lorem ipsum dolor</p>
-							</section>
-							<section class="3u 6u$(medium) 12u$(xsmall) profile">
-								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Voluptatem dolores</h4>
-								<p>Ullam nihil repudi</p>
-							</section>
-							<section class="3u 6u(medium) 12u$(xsmall) profile">
-								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Doloremque quo</h4>
-								<p>Harum corrupti quia</p>
-							</section>
-							<section class="3u$ 6u$(medium) 12u$(xsmall) profile">
-								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Voluptatem dicta</h4>
-								<p>Et natus sapiente</p>
-							</section>
-						</div>
-					</section>
-					<footer>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam dolore illum, temporibus veritatis eligendi, aliquam, dolor enim itaque veniam aut eaque sequi qui quia vitae pariatur repudiandae ab dignissimos ex!</p>
-						<ul class="actions">
-							<li>
-								<a href="#" class="button big">Lorem ipsum dolor sit</a>
-							</li>
-						</ul>
-					</footer>
-				</div>
+			<?php
+			include "classes/DaoFoodtruck.php";
+			$foodtrucks = DaoFoodtruck::getInstance ()->retornarLatLong();	
+			?>
+			<!-- <section id="two" class="wrapper style2 special">				 -->
+			<section id="two">				
+				<div id="map"></div>				
+			
+				<link href='css/mapa.css' rel='stylesheet' type='text/css'>
+				<script>
+					$(function () {
+						function initMap() {
+							var foodtrucks = JSON.parse( '<?php echo json_encode($foodtrucks) ?>' );							
+							var centro = new google.maps.LatLng(-15.793750, -47.882862);		        
+							var mapCanvas = document.getElementById('map');
+							var mapOptions = {
+								center: centro,
+								zoom: 13,
+								panControl: false,
+								scrollwheel: true,
+								mapTypeId: google.maps.MapTypeId.ROADMAP
+							}
+							var map = new google.maps.Map(mapCanvas, mapOptions);
+							var markerImage = 'images/marcador.png';
+							<!-- var styles = [{"featureType": "landscape", "stylers": [{"saturation": -100}, {"lightness": 65}, {"visibility": "on"}]}, {"featureType": "poi", "stylers": [{"saturation": -100}, {"lightness": 51}, {"visibility": "simplified"}]}, {"featureType": "road.highway", "stylers": [{"saturation": -100}, {"visibility": "simplified"}]}, {"featureType": "road.arterial", "stylers": [{"saturation": -100}, {"lightness": 30}, {"visibility": "on"}]}, {"featureType": "road.local", "stylers": [{"saturation": -100}, {"lightness": 40}, {"visibility": "on"}]}, {"featureType": "transit", "stylers": [{"saturation": -100}, {"visibility": "simplified"}]}, {"featureType": "administrative.province", "stylers": [{"visibility": "off"}]}, {"featureType": "water", "elementType": "labels", "stylers": [{"visibility": "on"}, {"lightness": -25}, {"saturation": -100}]}, {"featureType": "water", "elementType": "geometry", "stylers": [{"hue": "#ffff00"}, {"lightness": -25}, {"saturation": -97}]}]; -->
+							/* map.set('styles', styles); */
+							
+							<!-- Inserção dos marcadores -->
+							for (i = 0; i < foodtrucks.length; i++) { 							
+								var lat = foodtrucks[i]['NR_LAT'];
+								var lng = foodtrucks[i]['NR_LONG'];		
+								var nome = foodtrucks[i]['TE_NOME'];
+								var alimento = foodtrucks[i]['TE_ALIMENTO'];
+								var descricao = foodtrucks[i]['TE_DESCRICAO'];								
+								var marcador = new google.maps.LatLng(lat, lng);
+								var contentString = '<div class="info-window">' +
+										'<h3>'+ nome + '</h3>' +
+										'<h4>'+ alimento + '</h4>' +
+										'<div class="info-content">' +
+										'<p>'+ descricao + '</p>' +
+										'</div>' +
+										'</div>';	
+								var marker = new google.maps.Marker({
+									position: marcador,
+									map: map,
+									icon: markerImage,
+									title: nome + ': ' + alimento
+								});
+							
+								var infowindow = new google.maps.InfoWindow()
+								
+								google.maps.event.addListener(marker,'click', (function(marker,contentString,infowindow){ 
+									return function() {
+									infowindow.setContent(contentString);
+									infowindow.open(map,marker);
+									};
+								})(marker,contentString,infowindow));
+								
+							}
+						}
+						google.maps.event.addDomListener(window, 'load', initMap);
+					});					
+				</script>
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmrExWndfKz7CdR7vZADNbCbKj7GgX4So"></script>				
 			</section>
 
 		<!-- Footer -->
