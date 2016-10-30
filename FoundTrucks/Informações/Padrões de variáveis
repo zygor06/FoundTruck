@@ -1,0 +1,17 @@
+Nome 				Tipo 					Descrição
+BD_exemplo 			Base de dados			Nome da base de dados
+tb_exemplo			Tabela de dados			Nome de uma tabela
+
+arExemplo			Array					Array PHP
+obExemplo			Objeto					Objeto PHP
+nmExemplo			Número					Número que possua significado para o usuário
+csExemplo			Classificador			Classificador PHP. Pode ser utilizado quando for criar uma lista de coisas do mesmo tipo
+boExemplo			Booleano				Booleano php
+stExemplo			String					String php. Utilizado quando não tem significado para o usuário, como uma string de consulta sql
+teExemplo			Texto					Text PHP. O texto é algo que tem significado para o usuário
+dtExemplo			Data					Data PHP
+
+NM_EXEMPLO			Número					Número no banco de dados
+CS_EXEMPLO			Classificador			Classificador no banco de dados
+TE_EXEMPLO			Texto					Texto no banco de dados
+DT_EXEMPLO			Data					Data no banco de dados			
