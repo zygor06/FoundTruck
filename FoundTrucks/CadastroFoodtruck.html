@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Cadastro</title>
+
+		<meta charset="UTF-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<script src="js/script.js"></script>
+
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+
+		<link rel="stylesheet" href="css/bootstrap.css" media="screen">		
+		
+		<script src="js/bootstrap.min.js"></script>
+
+	</head>
+
+	<body>
+
+		<!-- Header -->
+			<header id="header">				
+				<h1 id="logo"><a href="index.html" id="logo-name">FoundTruck</a></h1>
+				
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="parceiros.html">Parceiros</a></li>
+						<li><a href="sobre.html">Sobre</a></li>
+						<li><a href="#" class="button special">Logar</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				
+				<form action="cadastro.php">
+		<!-- One -->
+			<section id="one" class="wrapper style1 special">
+				<div class="container">
+					<header class="major">
+						<h2>Cadastre o seu foodtruck com a gente</h2>
+					</header>
+					<h3> Coloque a imagem do seu foodtruck para que seus clientes saibam te achar</h3> 
+					<div class="span6 offset3">
+						<p><input type="file" name="imagem_foodtruck" /></p>					
+					</div>
+						
+					
+					
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper style2 special">
+				<div class="container">
+					<header class="major">
+						<h2>Informações sobre seu foodtruck</h2>
+					</header>
+					<form>
+						Nome do Foodtruck<input type="text" name="nome_foodtruck" placeholder="Nome do seu foodtruck" size="50"/>
+						Email para login e contato<input type="email" name="email_login" placeholder="Email" size="50"/>
+						Senha:<input type="password" name="senha" placeholder="Senha" size="30"/>
+						Responsável pelo Foodtruck<input type="text" name="responsavel" placeholder="Responsável" size="40"/>
+						<br>
+						Tipo alimento vendido<br>
+						<div class="checkbox">
+						<ul>
+							<li><label><input type="checkbox" name="alimento" value="hamburguer" required="required"/>Hamburguer</label></li>
+							<li><label><input type="checkbox" name="alimento" value="sanduíches" required="required"/>Sanduíches</label></li>
+							<li><label><input type="checkbox" name="alimento" value="massas" required="required"/>Massas</label></li>
+							<li><label><input type="checkbox" name="alimento" value="bebidas" required="required"/>Bebidas</label></li>
+							<li><label><input type="checkbox" name="alimento" value="vegetariano" required="required"/>Vegetariano</label></li>
+							<li><label><input type="checkbox" name="alimento" value="vegano" required="required"/>Vegano</label></li>
+							<li><label><input type="checkbox" name="alimento" value="doces" required="required"/>Doces</label></li>
+						</ul>
+							
+					</div>
+					
+					<div>
+							<input type="submit" name="cadastrar" value="Cadastrar">
+					</div>
+						
+					</form>
+
+					<br>
+					<br>
+					
+					Obs: Você pode selecionar mais de um tipo para atrair mais clientes
+					
+				</div>
+			</section>
+			
+		</form>
+				
+			</section>
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<section class="links">
+						<div class="row">
+							<section class="3u 6u(medium) 12u$(small)">
+								<h3>Lorem ipsum dolor</h3>
+								<ul class="unstyled">
+									<li><a href="#">Lorem ipsum dolor sit</a></li>
+									<li><a href="#">Nesciunt itaque, alias possimus</a></li>
+									<li><a href="#">Optio rerum beatae autem</a></li>
+									<li><a href="#">Nostrum nemo dolorum facilis</a></li>
+									<li><a href="#">Quo fugit dolor totam</a></li>
+								</ul>
+							</section>
+							<section class="3u 6u$(medium) 12u$(small)">
+								<h3>Culpa quia, nesciunt</h3>
+								<ul class="unstyled">
+									<li><a href="#">Lorem ipsum dolor sit</a></li>
+									<li><a href="#">Reiciendis dicta laboriosam enim</a></li>
+									<li><a href="#">Corporis, non aut rerum</a></li>
+									<li><a href="#">Laboriosam nulla voluptas, harum</a></li>
+									<li><a href="#">Facere eligendi, inventore dolor</a></li>
+								</ul>
+							</section>
+							<section class="3u 6u(medium) 12u$(small)">
+								<h3>Neque, dolore, facere</h3>
+								<ul class="unstyled">
+									<li><a href="#">Lorem ipsum dolor sit</a></li>
+									<li><a href="#">Distinctio, inventore quidem nesciunt</a></li>
+									<li><a href="#">Explicabo inventore itaque autem</a></li>
+									<li><a href="#">Aperiam harum, sint quibusdam</a></li>
+									<li><a href="#">Labore excepturi assumenda</a></li>
+								</ul>
+							</section>
+							<section class="3u$ 6u$(medium) 12u$(small)">
+								<h3>Illum, tempori, saepe</h3>
+								<ul class="unstyled">
+									<li><a href="#">Lorem ipsum dolor sit</a></li>
+									<li><a href="#">Recusandae, culpa necessita nam</a></li>
+									<li><a href="#">Cupiditate, debitis adipisci blandi</a></li>
+									<li><a href="#">Tempore nam, enim quia</a></li>
+									<li><a href="#">Explicabo molestiae dolor labore</a></li>
+								</ul>
+							</section>
+						</div>
+					</section>
+					<div class="row">
+						<div class="8u 12u$(medium)">
+							<ul class="copyright">
+								<li>&copy; FoundTruck. Todos os Direitos Reservados</li>
+								<li>Desenvolvimento: <a href="http://www.uniceub.br" title="Turma de Ciência da Computação - 5º Período">TCC - UniCEUB</a></li>
+								<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+							</ul>
+						</div>
+						<div class="4u$ 12u$(medium)">
+							<ul class="icons">
+								<li>
+									<a class="icon rounded icon-facebook"><span class="label">Facebook</span></a>
+								</li>
+								<li>
+									<a class="icon rounded icon-twitter"><span class="label">Twitter</span></a>
+								</li>
+								<li>
+									<a class="icon rounded icon-google-plus"><span class="label">Google+</span></a>
+								</li>
+								<li>
+									<a class="icon rounded icon-linkedin"><span class="label">LinkedIn</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+	</body>
+</html>
