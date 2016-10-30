@@ -1,0 +1,2 @@
+AddType x-httpd-php .php .htm .html
+DirectoryIndex index.php

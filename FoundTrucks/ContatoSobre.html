@@ -31,8 +31,8 @@
 	<body>
 
 		<!-- Header -->
-			<header id="header">
-				<h1><a href="index.html">FoundTruck</a></h1>
+			<header id="header">				
+				<h1 id="logo"><a href="index.html" id="logo-name">FoundTruck</a></h1>
 				
 				<nav id="nav">
 					<ul>
@@ -46,11 +46,20 @@
 
 		<!-- Main -->
 			<section id="main" class="wrapper">
-				<div>
-					<h2>
-					OI
-					
-					</h2>
+				<div class="container">
+				
+					<h4>
+					O foundtruck é um projeto inovador onde você pode cadastrar  
+					o seu foodtruck ou procurar pelo seu foodtruck favorito até 
+					mesmo saber quais são os foodtrucks mais próximos de você.
+					Esse serviço foi desenvolvido como um projeto acadêmico
+					por pessoas que também gostam de comidas de foodtruck
+					porém nunca sabiam onde eles estavam ou se havia algum por 
+					perto, por isso a equipe produziu esse serviço.
+					Lembrando que por ser um projeto acadêmico algumas funcionalidades
+					podem não estar em sua maior eficiência.
+					Caso deseje nos enviar sua opnião, por favor faça-o abaixo 
+					</h4>
 				
 				</div>
 				
@@ -75,16 +84,17 @@
 						<h2>Mande-nos uma mensagem</h2>
 					</header>
 					
-					<form action="">
-						Email para contato<input type="text" name="email" placeholder="Seu email" size="60" id="email"/>
-						Assunto<input type="text" name="assunto" placeholder="Assunto" size="100" id="assunto"/>
+					<form action="contato.php" name="form_contato" method="post">
+						Nome <input type="text" name="nome" placeholder="Nome" size="100" required="required">
+						Email para contato<input type="text" name="email_contato" placeholder="Seu email" size="60" required="required"/>
+						Assunto<input type="text" name="assunto" placeholder="Assunto" size="100" required="required"/>
 						Sua opinião/relato: <textarea rows="20" cols="20" 
-						draggable="false" maxlength="800" id="texto">
+						draggable="false" maxlength="800" name="texto" required="required">
 						
 						</textarea>
 						<br>
 						
-							<input type="submit" name="cadastrar" value="Cadastrar">
+							<input type="submit" name="enviar" value="Enviar">
 						
 					</form>
 
