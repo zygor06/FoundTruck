@@ -1,2 +1,31 @@
+# Interpreta como php arquivos html
 AddType x-httpd-php .php .htm .html
+
+# Define a página principal como a index.php
 DirectoryIndex index.php
+
+# Restringe o acesso de externos aos arquivos
+deny from all
+
+# Evita a listagem de diretórios
+Options -Indexes
+
+# Remove as extensões das páginas
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+# Páginas de erro
+ErrorDocument 404 erro.html
+ErrorDocument 403 erro.html
+ErrorDocument 401 erro.html
+ErrorDocument 408 erro.html
+ErrorDocument 500 erro.html
+ErrorDocument 502 erro.html
+
