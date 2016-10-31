@@ -71,21 +71,21 @@
 							<section class="box">
 								<i class="icon big rounded color1 icon-map-marker"></i>
 								<h3>Localização em tempo real</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quam consectetur quibusdam magni minus aut modi aliquid.</p>
+								<p>Veja onde se encontra seu foodtruck favorito ou qual é o mais próximo de você.</p>
 							</section>
 						</div>
 						<div class="4u 12u$(medium)">
 							<section class="box">
 								<i class="icon big rounded color9 icon-food"></i>
 								<h3>Comida pra todo gosto</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ullam consequatur repellat debitis maxime.</p>
+								<p>Aqui temos vários food trucks como parceiros então também temos vários tipos de alimentos para você se deliciar.</p>
 							</section>
 						</div>
 						<div class="4u$ 12u$(medium)">
 							<section class="box">
 								<i class="icon big rounded color6 icon-truck"></i>
 								<h3>Diversos parceiros</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eaque eveniet, nesciunt molestias. Ipsam, voluptate vero.</p>
+								<p>Com variedade de parceiros que possuímos, você poderá desfrutar de vários tipos de comida.</p>
 							</section>
 						</div>
 					</div>
@@ -165,43 +165,36 @@
 					<section class="links">
 						<div class="row">
 							<section class="3u 6u(medium) 12u$(small)">
-								<h3>Lorem ipsum dolor</h3>
+								<h3>Found Truck</h3>
 								<ul class="unstyled">
-									<li><a href="#">Lorem ipsum dolor sit</a></li>
-									<li><a href="#">Nesciunt itaque, alias possimus</a></li>
-									<li><a href="#">Optio rerum beatae autem</a></li>
-									<li><a href="#">Nostrum nemo dolorum facilis</a></li>
-									<li><a href="#">Quo fugit dolor totam</a></li>
+									<li><a href="/">Página principal</a></li>
+									<li><a href="/">Rastreio rápido</a></li>
+									
 								</ul>
 							</section>
 							<section class="3u 6u$(medium) 12u$(small)">
-								<h3>Culpa quia, nesciunt</h3>
+								<h3>Procure parceiros</h3>
 								<ul class="unstyled">
-									<li><a href="#">Lorem ipsum dolor sit</a></li>
-									<li><a href="#">Reiciendis dicta laboriosam enim</a></li>
-									<li><a href="#">Corporis, non aut rerum</a></li>
-									<li><a href="#">Laboriosam nulla voluptas, harum</a></li>
-									<li><a href="#">Facere eligendi, inventore dolor</a></li>
+									<li><a href="parceiros.html">Pesquisar</a></li>
+									<li><a href="parceiros.html">Filtrar</a></li>
+									<li><a href="parceiros.html">Listar</a></li>
+									
 								</ul>
 							</section>
 							<section class="3u 6u(medium) 12u$(small)">
-								<h3>Neque, dolore, facere</h3>
+								<h3>Seja um parceiro</h3>
 								<ul class="unstyled">
-									<li><a href="#">Lorem ipsum dolor sit</a></li>
-									<li><a href="#">Distinctio, inventore quidem nesciunt</a></li>
-									<li><a href="#">Explicabo inventore itaque autem</a></li>
-									<li><a href="#">Aperiam harum, sint quibusdam</a></li>
-									<li><a href="#">Labore excepturi assumenda</a></li>
+									<li><a href="CadastroFoodtruck.html">Cadastre-se</a></li>
+									<li><a href="/">Entre</a></li>
+									
 								</ul>
 							</section>
 							<section class="3u$ 6u$(medium) 12u$(small)">
-								<h3>Illum, tempori, saepe</h3>
+								<h3>Sobre a equipe</h3>
 								<ul class="unstyled">
-									<li><a href="#">Lorem ipsum dolor sit</a></li>
-									<li><a href="#">Recusandae, culpa necessita nam</a></li>
-									<li><a href="#">Cupiditate, debitis adipisci blandi</a></li>
-									<li><a href="#">Tempore nam, enim quia</a></li>
-									<li><a href="#">Explicabo molestiae dolor labore</a></li>
+									<li><a href="ContatoSobre.html">Sobre a equipe Foundtruck</a></li>
+									<li><a href="ContatoSobre.html">Contate-nos</a></li>
+									
 								</ul>
 							</section>
 						</div>
@@ -233,7 +226,7 @@
 					</div>
 				</div>
 			</footer>
-		<!-- End Footer -->	
+		<!-- End Footer -->
 		
 		<!-- Modal -->
 			<div class="modal fade" id="mapmodals">
