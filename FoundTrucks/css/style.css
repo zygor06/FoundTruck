@@ -1053,6 +1053,7 @@
 		color: #ffffff;
 		padding: 14em 0em 14em;
 		text-align: center;
+		text-shadow: black 5px 5px 10px;
 	}
 
 		#banner :last-child {
@@ -1241,6 +1242,7 @@
 		background-position: left;
 		font-family: 'fonteLogo';
 		font-weight: 100;
+		text-transform: capitalize;
 	}
 
 	#logo-name{
