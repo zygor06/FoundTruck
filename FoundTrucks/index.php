@@ -25,8 +25,6 @@
 		
 		<script src="js/bootstrap.min.js"></script>
 		
-		<style>#map-container { height: 450px }</style>
-
 	</head>
 	
 	<body class="landing">
@@ -48,20 +46,18 @@
 		<!-- Banner -->
 			<section id="banner">
 				<h2>Olá. Este é o Found Truck.</h2>
-				<p>Localize o FoodTruck de sua preferência mais próximo em apenas um clique.</p>
+				<p>Localize seu FoodTruck preferido em apenas um clique.</p>
 				<ul class="actions">
-					<li>
-						<!-- <a href="#" class="button big">Rastreio Rápido</a> -->
-						<!--<a href="#" class="button big" data-toggle="modal" data-target="#mapaModal">Rastreio Rápido</a>-->
+					<li>				
 						<a href="#two" class="button big">Rastreio Rápido</a>	
 					</li>
 				</ul>
 			</section>
 
 		<!-- One -->
-			<section id="one" class="wrapper style1 special">			
-				<div class="container">
-				
+			<section id="one" class="wrapper style1 special">									
+				<div class="container">	
+
 					<header class="major">
 						<h2>Sua fome não pode esperar</h2>
 						<p>Encontre o <strong>FoodTruck</strong> mais próximo de você já!</p>
@@ -77,15 +73,15 @@
 						<div class="4u 12u$(medium)">
 							<section class="box">
 								<i class="icon big rounded color9 icon-food"></i>
-								<h3>Comida pra todo gosto</h3>
-								<p>Aqui temos vários food trucks como parceiros então também temos vários tipos de alimentos para você se deliciar.</p>
+								<h3>Comida para todos os gostos.</h3>
+								<p>Diversos tipos de cardápios para você se deliciar.</p>
 							</section>
 						</div>
 						<div class="4u$ 12u$(medium)">
 							<section class="box">
 								<i class="icon big rounded color6 icon-truck"></i>
 								<h3>Diversos parceiros</h3>
-								<p>Com variedade de parceiros que possuímos, você poderá desfrutar de vários tipos de comida.</p>
+								<p>Com nosso site, você poderá desfrutar de vários tipos de comida.</p>
 							</section>
 						</div>
 					</div>
@@ -102,11 +98,27 @@
 				<div id="map"></div>				
 			
 				<link href='css/mapa.css' rel='stylesheet' type='text/css'>
+				<p id="geo"></p>
 				<script>
+
 					$(function () {
-						function initMap() {
-							var foodtrucks = JSON.parse( '<?php echo json_encode($foodtrucks) ?>' );							
-							var centro = new google.maps.LatLng(-15.793750, -47.882862);		        
+					
+						function getLocation() {
+							if (navigator.geolocation) {
+								navigator.geolocation.getCurrentPosition(initMap);
+							} else {
+								x.innerHTML = "Geolocation is not supported by this browser.";
+							}
+						}
+
+						getLocation();
+					
+						function initMap(position) {							
+								
+							var foodtrucks = JSON.parse( '<?php echo json_encode($foodtrucks) ?>' );																					
+							<!-- CORRIGIR CASO O USUÁRIO NÃO FORNEÇA PERMISSÃO PARA GEOLOCALIZAÇÃO! -->
+							var centro = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);							
+														
 							var mapCanvas = document.getElementById('map');
 							var mapOptions = {
 								center: centro,
@@ -168,8 +180,7 @@
 								<h3>Found Truck</h3>
 								<ul class="unstyled">
 									<li><a href="/">Página principal</a></li>
-									<li><a href="/">Rastreio rápido</a></li>
-									
+									<li><a href="/">Rastreio rápido</a></li>							
 								</ul>
 							</section>
 							<section class="3u 6u$(medium) 12u$(small)">
@@ -227,46 +238,18 @@
 				</div>
 			</footer>
 		<!-- End Footer -->
-		
-		<!-- Modal -->
-			<div class="modal fade" id="mapmodals">
-				<div class="modal-dialog modal-lg">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							<h4 class="modal-title"><center>Found Trucks</center></h4>
-						</div>
-						<div class="modal-body">
-							<div id="map-container"></div>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="close" data-dismiss="modal">Close</button>
-						</div>
-					</div><!-- /.modal-content -->
-				</div><!-- /.modal-dialog -->
-			</div><!-- /.modal -->
 			
 			<!-- Classe com imagens para serem carregadas em buffer -->
 		    <div class="hide">
 		        <img src="images/banner/img1.jpg" alt="image1" /> <img
-		            src="images/banner/img2.jpg" alt="image2" /> <img
-		            src="images/banner/img3.jpg" alt="image3" /> <img
-		            src="images/banner/img4.jpg" alt="image4" /> <img
-		            src="images/banner/img5.jpg" alt="image5" /> <img
-		            src="images/banner/img6.jpg" alt="image6" /> <img
-		            src="images/banner/img7.jpg" alt="image7" /> <img
-		            src="images/banner/img8.jpg" alt="image8" /> <img
-		            src="images/banner/img9.jpg" alt="image9" />
+		             src="images/banner/img2.jpg" alt="image2" /> <img
+		             src="images/banner/img3.jpg" alt="image3" /> <img
+		             src="images/banner/img4.jpg" alt="image4" /> <img
+		             src="images/banner/img5.jpg" alt="image5" /> <img
+		             src="images/banner/img6.jpg" alt="image6" /> <img
+		             src="images/banner/img7.jpg" alt="image7" /> <img
+		             src="images/banner/img8.jpg" alt="image8" /> <img
+		             src="images/banner/img9.jpg" alt="image9" />
 		    </div>
-		
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="js/jquery.min.js"></script>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="js/bootstrap.min.js"></script>
-		<script src="http://maps.google.com/maps/api/js?key=AIzaSyAmrExWndfKz7CdR7vZADNbCbKj7GgX4So&callback=initMap"></script>
-		<!--<script src="http://maps.google.com/maps/api/js?sensor=false"></script>-->
-		<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmrExWndfKz7CdR7vZADNbCbKj7GgX4So&callback=initMap" async defer></script>-->		
-		<script src="js/googleMaps.js"></script>
-
 	</body>
 </html>
