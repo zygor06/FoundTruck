@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Parceiros</title>
+
+		<meta charset="UTF-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<script src="js/script.js"></script>
+
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+
+		<link rel="stylesheet" href="css/bootstrap.css" media="screen">		
+		
+		<script src="js/bootstrap.min.js"></script>
+
+	</head>
+
+	<body>
+
+		<!-- Header -->
+			<?php include "header_alt.php"?>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+
+					<header class="major">
+						<h2>Food Trucks</h2>
+						<p>Aqui você encontra a lista de todos os Food Trucks que são nossos parceiros</p>
+					</header>
+
+					<h4>Pesquisar</h4>
+					<div class="6u 12u$(4)">
+						<input type="text" name="name" id="name" value="" placeholder="Name" />
+						<br>
+					</div>
+
+					<h4>Filtrar por tipo</h4>
+					<div class="6u$ 12u$(4)">
+						<div class="select-wrapper">
+							<select name="category" id="category">
+								<option value="">Listar tipos</option>
+								<option value="1">Tipo 1</option>
+								<option value="1">Tipo 2</option>
+								<option value="1">Tipo 3</option>
+								<option value="1">Tipo 4</option>
+								<option value="1">Tipo 5</option>
+								<option value="1">Tipo 6</option>
+							</select>
+						</div>
+						<br>
+					</div>
+
+					<a href="detalhes.html"><h4>Food Truck #1</h4></a>
+							<p><a href="detalhes.html"><span class="image left"><img src="images/foodtrucks/logo/logo1.jpg" alt="" /></span></a>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum.</p>
+
+					<br><br><br><br><br><br>
+					<a href="detalhes.html"><h4>Food Truck #2</h4></a>
+							<p><a href="detalhes.html"><span class="image left"><img src="images/foodtrucks/logo/logo2.jpg" alt="" /></span></a>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus.</p>
+
+					<br><br><br><br><br><br>
+					<a href="detalhes.html"><h4>Food Truck #3</h4></a>
+							<p><a href="detalhes.html"><span class="image left"><img src="images/foodtrucks/logo/logo3.jpg" alt="" /></span></a>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum.</p>
+
+					<br><br><br><br><br><br>
+					<a href="detalhes.html"><h4>Food Truck #4</h4></a>
+							<p><a href="detalhes.html"><span class="image left"><img src="images/foodtrucks/logo/logo4.jpg" alt="" /></span></a>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum.</p>
+
+					<br><br><br><br><br><br>
+					<ul class="pagination">
+						<li><a href="#">«</a></li>
+						<li><a class="active" href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">»</a></li>
+					</ul>
+
+				</div>
+
+			</section>
+
+		<!-- Footer -->
+			<?php include "footer.php"; ?>
+
+	</body>
+</html>
