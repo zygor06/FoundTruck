@@ -1,16 +1,7 @@
 <?php
 include "../DaoUsuario.php";
 
-if(basename($_SERVER["PHP_SELF"])==basename(__FILE__) )
-    exit("<script>alert('Nao permitido')</script>\n<script>window.location=('../../index.php')</script>");
-
 session_start();
-
-if (!isset($_SESSION['admin'])){
-    return header('../../index.php');
-} elseif (isset($_SESSION['admin']) && $_SESSION['admin'] == false) {
-    return header('../../areaRestrita/index.php');
-}
 
 $email = isset($_POST['teEmail']) ? $_POST['teEmail'] : null;
 $senha = isset($_POST['teSenha']) ? $_POST['teSenha'] : null;
@@ -21,6 +12,9 @@ try{
 }catch(Exception $e){
     die();
 }
+
+echo "Autenticando";
+
 ?>
 
 <html>
@@ -29,11 +23,11 @@ try{
     <title>Autenticando Usu�rio</title>
     <script>
         function loginsuccessfully(){
-            setTimeout("window.location='../../AreaRestrita/index.php'", 5000);
+            setTimeout("window.location='../../AreaRestrita/index.php'", 2000);
         }
 
         function loginfailed(){
-            setTimeout("window.location='../../testeLogin.php'", 5000);
+            setTimeout("window.location='../../index.php'", 2000);
             alert("Usuário ou senha incorretos.");
         }
     </script>

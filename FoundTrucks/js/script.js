@@ -24,4 +24,8 @@ $(document).ready(function(){
 
 	recursiva();
 	
+	function loginfade(){
+		$("#login-modal").modal("hide");
+	}
+	
 });
