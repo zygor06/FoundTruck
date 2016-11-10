@@ -82,13 +82,15 @@ class DaoFoodtruck{
 		}
 	}
 
-	public function BuscarPorUsuario($nrCPF) {
+	public function buscarPorUsuario($nrCPF) {
 		try {
-			$stSql = "SELECT * FROM TB_FOODTRUCK WHERE NR_CPF = :cpf";
+			$stSql = "SELECT * FROM TB_FOODTRUCK WHERE NR_CPF_USUARIO = :cpf";
 			$obSql = Conexao::getInstance()->prepare($stSql);
 			$obSql->bindValue(":cpf", $nrCPF);
 			$obSql->execute();
-			return $this->populaFoodtruck($obSql->fetch(PDO::FETCH_ASSOC));
+			// return $this->populaFoodtruck($obSql->fetch(PDO::FETCH_ASSOC));
+			// return $obSql->fetchAll(PDO::FETCH_ASSOC);
+			return $obSql->fetchAll();
 		} catch (Exception $e) {
 			print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
 			GeraLog::getInstance()->inserirLog("Erro: CÃ³digo: " . $e->getCode() . " Mensagem: " . $e->getMessage());

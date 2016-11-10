@@ -40,6 +40,7 @@ if($email == $obUsuario->getEmail() && $senha == $obUsuario->getSenha()){
     $_SESSION["teEmail"] = $_POST["teEmail"];
     $_SESSION["teSenha"] = $_POST["teSenha"];
     $_SESSION["teUsuario"] = $obUsuario->getNome();
+    $_SESSION["cpf"] = $obUsuario->getCpf();
     echo "<script>loginsuccessfully();</script>";
 }else{
     echo "<script>loginfailed();</script>";
