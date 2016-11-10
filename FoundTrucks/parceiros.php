@@ -23,7 +23,7 @@
 		</noscript>
 
 		<link rel="stylesheet" href="css/bootstrap.css" media="screen">		
-		
+			
 		<script src="js/bootstrap.min.js"></script>
 
 	</head>
@@ -31,7 +31,14 @@
 	<body>
 
 		<!-- Header -->
-			<?php include "header_alt.php"?>
+			<?php include "header_alt.php";
+			include "classes/DaoFoodtruck.php";
+			
+			$arFoodTruck = DaoFoodTruck::getInstance()->listarFoodTrucks();
+
+			//print_r($arFoodTruck);
+			
+			?>
 
 		<!-- Main -->
 			<section id="main" class="wrapper">
@@ -39,7 +46,7 @@
 
 					<header class="major">
 						<h2>Food Trucks</h2>
-						<p>Aqui você encontra a lista de todos os Food Trucks que são nossos parceiros</p>
+						<p>Aqui vocÃª encontra a lista de todos os Food Trucks que sÃ£o nossos parceiros</p>
 					</header>
 
 					<h4>Pesquisar</h4>
@@ -48,7 +55,7 @@
 						<br>
 					</div>
 
-					<h4>Filtrar por tipo</h4>
+					<!-- <h4>Filtrar por tipo</h4>
 					<div class="6u$ 12u$(4)">
 						<div class="select-wrapper">
 							<select name="category" id="category">
@@ -62,33 +69,38 @@
 							</select>
 						</div>
 						<br>
-					</div>
+					</div> -->
 
-					<a href="detalhes.html"><h4>Food Truck #1</h4></a>
-							<p><a href="detalhes.html"><span class="image left"><img src="images/foodtrucks/logo/logo1.jpg" alt="" /></span></a>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum.</p>
+					<?php 
 
-					<br><br><br><br><br><br>
-					<a href="detalhes.html"><h4>Food Truck #2</h4></a>
-							<p><a href="detalhes.html"><span class="image left"><img src="images/foodtrucks/logo/logo2.jpg" alt="" /></span></a>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus.</p>
+						foreach ($arFoodTruck as $row) {
+							$nome = $row['TE_NOME'];						
+							$descricao = $row['TE_DESCRICAO'];
+							$imagem = $row['TE_IMAGEM'];
 
-					<br><br><br><br><br><br>
-					<a href="detalhes.html"><h4>Food Truck #3</h4></a>
-							<p><a href="detalhes.html"><span class="image left"><img src="images/foodtrucks/logo/logo3.jpg" alt="" /></span></a>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum.</p>
+							echo '
+								<div class="row">
+									<div class="col-md-12">
+										<a href="detalhes.html"><h4 class="tituloFoodtruck">'.$nome.'</h4></a>
+										<p class="descricaoFoodtruck"><a href="detalhes.html"><span class="image left"><img src="images/foodtrucks/logo/logo1.jpg" alt="" /></span></a>'.$descricao.'</p>
+									</div>
+								</div>
 
-					<br><br><br><br><br><br>
-					<a href="detalhes.html"><h4>Food Truck #4</h4></a>
-							<p><a href="detalhes.html"><span class="image left"><img src="images/foodtrucks/logo/logo4.jpg" alt="" /></span></a>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum.</p>
 
-					<br><br><br><br><br><br>
+							';
+						}
+					?>
+					
+					<!-- <br><br><br><br><br><br>
 					<ul class="pagination">
-						<li><a href="#">«</a></li>
+						<li><a href="#">Â«</a></li>
 						<li><a class="active" href="#">1</a></li>
 						<li><a href="#">2</a></li>
 						<li><a href="#">3</a></li>
 						<li><a href="#">4</a></li>
 						<li><a href="#">5</a></li>
-						<li><a href="#">»</a></li>
-					</ul>
+						<li><a href="#">Â»</a></li>
+					</ul> -->
 
 				</div>
 

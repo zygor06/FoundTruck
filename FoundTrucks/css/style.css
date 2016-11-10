@@ -1383,3 +1383,10 @@
   font-size: 12px;
 }
 	
+.descricaoFoodtruck{
+	font-size: 16pt !important;
+}	
+
+.tituloFoodtruck{
+	font-size: 20pt !important;
+}

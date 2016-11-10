@@ -113,6 +113,18 @@ class DaoFoodtruck{
     }
 
 	
+	public function listarFoodTrucks() {
+		try {
+			$stSql = "SELECT * FROM TB_FOODTRUCK ORDER BY TE_NOME";
+			$obSql = Conexao::getInstance()->prepare($stSql);
+			$obSql->execute();
+			return $obSql->fetchAll();
+		} catch (Exception $e) {
+			print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
+			GeraLog::getInstance()->inserirLog("Erro: CÃ³digo: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+		}
+	}
+
 	
 	private function populaFoodtruck($arRow) {
 		$obTemp = new Foodtruck;
