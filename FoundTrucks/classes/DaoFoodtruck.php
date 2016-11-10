@@ -128,7 +128,7 @@ class DaoFoodtruck{
 	
 	private function populaFoodtruck($arRow) {
 		$obTemp = new Foodtruck;
-		//TE_NOME, NR_LAT, NR_LONG, NR_CPF_USUARIO, TE_DESCRICAO,	TE_IMAGEM, CS_ATIVO
+		//TE_NOME, NR_LAT, NR_LONG, NR_CPF_USUARIO, TE_DESCRICAO, TE_IMAGEM, CS_ATIVO
 		
 		$obTemp->setId($arRow['NR_ID']);
 		$obTemp->setNome($arRow['TE_NOME']);
