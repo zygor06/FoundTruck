@@ -17,37 +17,36 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 
-		<script src="../js/jquery.min.js"></script>
-		<script src="../js/skel.min.js"></script>
-		<script src="../js/skel-layers.min.js"></script>
-		<script src="../js/init.js"></script>
-		<script src="../js/script.js"></script>
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/skel.min.js"></script>
+		<script src="/js/skel-layers.min.js"></script>
+		<script src="/js/init.js"></script>
+		<script src="/js/script.js"></script>
 
 		<noscript>
-			<link rel="stylesheet" href="../css/skel.css" />
-			<link rel="stylesheet" href="../css/style.css" />
-			<link rel="stylesheet" href="../css/style-xlarge.css" />
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
 		</noscript>
 
-		<link rel="stylesheet" href="../css/bootstrap.css" media="screen">		
+		<link rel="stylesheet" href="css/bootstrap.css" media="screen">		
 			
-		<script src="../js/bootstrap.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
     </head>
 
     <body>
     	<?php include "../header_alt.php";
-		include "../classes/DaoFoodtruck.php";			
-		// $arFoodTruck = DaoFoodTruck::getInstance()->listarFoodTrucks();
+		include "../classes/DaoFoodtruck.php";					
 		$arFoodTruck = DaoFoodTruck::getInstance()->buscarPorUsuario($cpf);
-		?>
-        <h1>Seja bem Vindo <?php echo $usuario; ?></h1>
+		?>        
 
 <!-- Main -->
 			<section id="main" class="wrapper">
 				<div class="container">
 
 					<header class="major">
-						<h1>Seja bem Vindo <?php echo $usuario; ?></h1>				
+						<h2>Seja bem vindo <?php echo $usuario; ?></h2>		
+						<h1>Seus foodtrucks cadastrados são:</h1>		
 					</header>
 
 					<?php 
@@ -60,8 +59,12 @@
 							echo '
 								<div class="row">
 									<div class="col-md-12">
-										<a href="../detalhes.html"><h4 class="tituloFoodtruck">'.$nome.'</h4></a>
-										<p class="descricaoFoodtruck"><a href="../detalhes.html"><span class="image left"><img src="../images/foodtrucks/logo/logo1.jpg" alt="" /></span></a>'.$descricao.'</p>
+										<a href="/detalhes.html"><h4 class="tituloFoodtruck">'.$nome.'</h4></a>
+										<p class="descricaoFoodtruck"><a href="/detalhes.html"><span class="image left"><img src="/images/foodtrucks/logo/logo1.jpg" alt="" /></span></a>'.$descricao.'</p>
+										<ul class="actions">
+											<!--<li><a href="#" class="button big">Fazer check-in</a></li>-->
+											<li><a type="submit" class="button big">Fazer check-in</a></li>
+										</ul>
 									</div>
 								</div>
 

@@ -39,8 +39,8 @@ class DaoFoodtruck{
 			print("Inserido com sucesso no banco!");
 		} catch (Exception $e) {
 			echo gethostbyname("host.name.tld");
-			print "Ocorreu um erro ao tentar executar esta aÃ§Ã£o, foi gerado um LOG do mesmo, tente novamente mais tarde<br />.";
-			print("Erro: CÃ³digo: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+			print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG, tente novamente mais tarde<br />.";
+			print("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
 		}
 	}
 
@@ -64,10 +64,35 @@ class DaoFoodtruck{
 
 			return $obSql->execute();
 		} catch (Exception $e) {
-			print "Ocorreu um erro ao tentar executar esta aÃ§Ã£o, foi gerado um LOG do mesmo, tente novamente mais tarde.";
-			GeraLog::getInstance()->inserirLog("Erro: CÃ³digo: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+			print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG, tente novamente mais tarde.";
+			GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
 		}
 	}
+
+
+	public function Checkin(Foodtruck $obFoodtruck) {
+		try {
+			$stSql = "UPDATE TB_FOODTRUCK set
+				NR_LAT = :NR_LAT,
+                NR_LONG = :NR_LONG,                
+                CS_ATIVO = :CS_ATIVO
+
+                WHERE NR_CPF_USUARIO = :NR_CPF_USUARIO AND TE_NOME = :TE_NOME";
+
+			$obSql = Conexao::getInstance()->prepare($stSql);
+
+			$obSql->bindValue(":TE_NOME", $obFoodtruck->getNome());
+			
+			$obSql->bindValue(":CS_ATIVO", $obFoodtruck->getAtivo());
+			$obSql->bindValue(":NR_CPF", $obFoodtruck->getCpfUsuario());
+
+			return $obSql->execute();
+		} catch (Exception $e) {
+			print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG, tente novamente mais tarde.";
+			GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+		}
+	}
+
 
 	public function Deletar($nrCPF) {
 		try {
@@ -77,8 +102,8 @@ class DaoFoodtruck{
 
 			return $obSql->execute();
 		} catch (Exception $e) {
-			print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
-			GeraLog::getInstance()->inserirLog("Erro: CÃ³digo: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+			print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG, tente novamente mais tarde.";
+			GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
 		}
 	}
 
@@ -92,8 +117,8 @@ class DaoFoodtruck{
 			// return $obSql->fetchAll(PDO::FETCH_ASSOC);
 			return $obSql->fetchAll();
 		} catch (Exception $e) {
-			print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
-			GeraLog::getInstance()->inserirLog("Erro: CÃ³digo: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+			print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG, tente novamente mais tarde.";
+			GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
 		}
 	}
 
@@ -109,8 +134,8 @@ class DaoFoodtruck{
     		return $obSql->fetchAll(PDO::FETCH_ASSOC);
     		
     	} catch (Exception $e) {
-    		print "Ocorreu um erro ao tentar executar esta aÃ§Ã£o, foi gerado um LOG do mesmo, tente novamente mais tarde.";
-    		GeraLog::getInstance()->inserirLog("Erro: CÃ³digo: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+    		print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG, tente novamente mais tarde.";
+    		GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
     	}
     }
 
@@ -122,8 +147,8 @@ class DaoFoodtruck{
 			$obSql->execute();
 			return $obSql->fetchAll();
 		} catch (Exception $e) {
-			print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
-			GeraLog::getInstance()->inserirLog("Erro: CÃ³digo: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+			print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG, tente novamente mais tarde.";
+			GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
 		}
 	}
 
