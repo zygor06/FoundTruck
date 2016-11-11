@@ -82,7 +82,7 @@
 								<div class="row">
 									<div class="col-md-12">
 										<a href="detalhes.html"><h4 class="tituloFoodtruck">'.$nome.'</h4></a>
-										<p class="descricaoFoodtruck"><a href="detalhes.html"><span class="image left"><img src="images/foodtrucks/logo/logo1.jpg" alt="" /></span></a>'.$descricao.'</p>
+										<p class="descricaoFoodtruck"><a href="detalhes.html"><span class="image left"><img src="images/foodtrucks/lista/logo1.jpg" alt="" /></span></a>'.$descricao.'</p>
 									</div>
 								</div>
 
