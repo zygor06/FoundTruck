@@ -152,6 +152,19 @@ class DaoFoodtruck{
 		}
 	}
 
+
+	public function contarFoodTrucks($nrCPF) {
+		try {
+			$stSql = "SELECT COUNT(TE_NOME) FROM TB_FOODTRUCK WHERE NR_CPF_USUARIO = :cpf";
+			$obSql = Conexao::getInstance()->prepare($stSql);
+			$obSql->bindValue(":cpf", $nrCPF);
+			$obSql->execute();
+			return $obSql->fetchColumn(0);
+		} catch (Exception $e) {
+			print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG, tente novamente mais tarde.";
+			GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+		}
+	}
 	
 	private function populaFoodtruck($arRow) {
 		$obTemp = new Foodtruck;
@@ -171,6 +184,11 @@ class DaoFoodtruck{
 		return $obTemp;
 	}
 	
+
+
+
+
+
 	private function carrega(){
 		echo '
 				

@@ -46,7 +46,7 @@
 
 					<header class="major">
 						<h2>Food Trucks</h2>
-						<p>Aqui vocÃª encontra a lista de todos os Food Trucks que sÃ£o nossos parceiros</p>
+						<p>Aqui você encontra a lista de Food Trucks parceiros</p>
 					</header>
 
 					<h4>Pesquisar</h4>
