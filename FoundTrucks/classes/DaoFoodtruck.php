@@ -51,8 +51,7 @@ class DaoFoodtruck{
                 TE_EMAIL = :TE_EMAIL,
                 TE_SENHA = :TE_SENHA,
                 CS_ATIVO = :CS_ATIVO
-
-                WHERE NR_CPF = :NR_CPF";
+                WHERE NR_CPF_USUARIO = :NR_CPF_USUARIO AND TE_NOME = :TE_NOME";
 
 			$obSql = Conexao::getInstance()->prepare($stSql);
 
@@ -70,21 +69,19 @@ class DaoFoodtruck{
 	}
 
 
-	public function Checkin(Foodtruck $obFoodtruck) {
+	public function Checkin($nome, $nrCPF, $lat, $long) {
 		try {
 			$stSql = "UPDATE TB_FOODTRUCK set
 				NR_LAT = :NR_LAT,
                 NR_LONG = :NR_LONG,                
-                CS_ATIVO = :CS_ATIVO
-
+                CS_ATIVO = '1'
                 WHERE NR_CPF_USUARIO = :NR_CPF_USUARIO AND TE_NOME = :TE_NOME";
 
 			$obSql = Conexao::getInstance()->prepare($stSql);
-
-			$obSql->bindValue(":TE_NOME", $obFoodtruck->getNome());
-			
-			$obSql->bindValue(":CS_ATIVO", $obFoodtruck->getAtivo());
-			$obSql->bindValue(":NR_CPF", $obFoodtruck->getCpfUsuario());
+			$obSql->bindValue(":TE_NOME", $nome);			
+			$obSql->bindValue(":NR_CPF_USUARIO", $nrCPF);
+			$obSql->bindValue(":NR_LAT", $lat);
+			$obSql->bindValue(":NR_LONG", $long);
 
 			return $obSql->execute();
 		} catch (Exception $e) {
@@ -93,12 +90,11 @@ class DaoFoodtruck{
 		}
 	}
 
-
 	public function Deletar($nrCPF) {
 		try {
-			$stSql = "DELETE FROM TB_FOODTRUCK WHERE NR_CPF = :cpf";
+			$stSql = "DELETE FROM TB_FOODTRUCK WHERE NR_CPF_USUARIO = :NR_CPF_USUARIO AND TE_NOME = :TE_NOME";
 			$obSql = Conexao::getInstance()->prepare($stSql);
-			$obSql->bindValue(":cpf", $nrCPF);
+			$obSql->bindValue(":NR_CPF_USUARIO", $nrCPF);
 
 			return $obSql->execute();
 		} catch (Exception $e) {
@@ -109,9 +105,9 @@ class DaoFoodtruck{
 
 	public function buscarPorUsuario($nrCPF) {
 		try {
-			$stSql = "SELECT * FROM TB_FOODTRUCK WHERE NR_CPF_USUARIO = :cpf";
+			$stSql = "SELECT * FROM TB_FOODTRUCK WHERE NR_CPF_USUARIO = :NR_CPF_USUARIO";
 			$obSql = Conexao::getInstance()->prepare($stSql);
-			$obSql->bindValue(":cpf", $nrCPF);
+			$obSql->bindValue(":NR_CPF_USUARIO", $nrCPF);
 			$obSql->execute();
 			// return $this->populaFoodtruck($obSql->fetch(PDO::FETCH_ASSOC));
 			// return $obSql->fetchAll(PDO::FETCH_ASSOC);
@@ -155,9 +151,9 @@ class DaoFoodtruck{
 
 	public function contarFoodTrucks($nrCPF) {
 		try {
-			$stSql = "SELECT COUNT(TE_NOME) FROM TB_FOODTRUCK WHERE NR_CPF_USUARIO = :cpf";
+			$stSql = "SELECT COUNT(TE_NOME) FROM TB_FOODTRUCK WHERE NR_CPF_USUARIO = :NR_CPF_USUARIO";
 			$obSql = Conexao::getInstance()->prepare($stSql);
-			$obSql->bindValue(":cpf", $nrCPF);
+			$obSql->bindValue(":NR_CPF_USUARIO", $nrCPF);
 			$obSql->execute();
 			return $obSql->fetchColumn(0);
 		} catch (Exception $e) {
@@ -168,7 +164,6 @@ class DaoFoodtruck{
 	
 	private function populaFoodtruck($arRow) {
 		$obTemp = new Foodtruck;
-		//TE_NOME, NR_LAT, NR_LONG, NR_CPF_USUARIO, TE_DESCRICAO, TE_IMAGEM, CS_ATIVO
 		
 		$obTemp->setId($arRow['NR_ID']);
 		$obTemp->setNome($arRow['TE_NOME']);
@@ -184,18 +179,9 @@ class DaoFoodtruck{
 		return $obTemp;
 	}
 	
-
-
-
-
-
 	private function carrega(){
-		echo '
-				
-				
-				';
+		echo '				';
 	}
-
 }
 
 ?>
