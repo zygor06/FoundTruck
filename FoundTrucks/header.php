@@ -38,11 +38,11 @@
 			<div class="modal-dialog">
 				<div class="loginmodal-container">
 					<h2 class="text-center" style="color:black !important;padding: 17px 0px;">Informe seus dados</h2>
-					<form method="post" action="classes/autenticacao/AutenticacaoUsuario.php">
-						<input type="text" name="user" placeholder="CPF"> 
-						<input type="text" name="user" placeholder="CPF"> 
-						<input type="text" name="user" placeholder="CPF"> 
-						<input type="password" name="pass" placeholder="Senha">
+					<form method="post" action="classes/autenticacao/AutenticacaoCadastro.php">
+						<input type="text" name="nome" placeholder="Nome">
+						<input type="text" name="cpf" placeholder="CPF">
+						<input type="text" name="email" placeholder="Email">  
+						<input type="password" name="senha" placeholder="Senha">	
 						<input type="submit" name="login" class="login loginmodal-submit" value="Login">
 					</form>
 				</div>

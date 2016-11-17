@@ -6,11 +6,10 @@ include "../Debug.php";
 
 $obUsuario;
 
-$cpf = isset($_POST['nrCpf']) ? $_POST['nrCpf'] : null;
-$nome = isset($_POST['teNome']) ? $_POST['teNome'] : null;
-$email = isset($_POST['teEmail']) ? $_POST['teEmail'] : null;
-$senha = isset($_POST['teSenha']) ? $_POST['teSenha'] : null;
-$confSenha = isset($_POST['confSenha']) ? $_POST['confSenha'] : null;
+$cpf = isset($_POST['cpf']) ? $_POST['cpf'] : null;
+$nome = isset($_POST['nome']) ? $_POST['nome'] : null;
+$email = isset($_POST['email']) ? $_POST['email'] : null;
+$senha = isset($_POST['senha']) ? $_POST['senha'] : null;
 
 $obUsuario = new Usuario();
 $obUsuario->setCpf($cpf);

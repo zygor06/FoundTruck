@@ -2,10 +2,10 @@
 
 //definindo as constantes de conexão
 
-define('CONST_HOST', "mysql.hostinger.com.br");
-define('CONST_USER', "u408929514_fdtrk");
-define('CONST_PASSWORD', "projetoweb16");
-define('CONST_DATABASE', "u408929514_fdtrk");
+define('CONST_HOST', "localhost");
+define('CONST_USER', "root");
+define('CONST_PASSWORD', "");
+define('CONST_DATABASE', "db_foundtruck");
 
 class Conexao{
 
