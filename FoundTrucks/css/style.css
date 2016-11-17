@@ -48,9 +48,9 @@
 	}
 
 		a:active, a:hover {
-			color:#ccc;
 			transition: .5s;
-			text-shadow: 1px 1px 1px black;
+			text-shadow: 1px 1px 1px white;
+			text-decoration: none !important;
 		}
 
 	strong, b {
@@ -1247,6 +1247,7 @@
 
 	#logo-name{
 		padding-left: 100px;
+		color:#0971CE;
 	}
 
 /* Paginação */
