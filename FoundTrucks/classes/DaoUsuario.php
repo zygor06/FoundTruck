@@ -38,8 +38,7 @@ class DaoUsuario{
             print("Inserido com sucesso no banco!");
         } catch (Exception $e) {
             echo gethostbyname("host.name.tld");
-            print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde<br />.";
-            print("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+            print($e->getMessage());
         }
     }
 
@@ -63,8 +62,7 @@ class DaoUsuario{
 
             return $obSql->execute();
         } catch (Exception $e) {
-            print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
-            GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+        	print($e->getMessage());
         }
     }
     
@@ -78,8 +76,7 @@ class DaoUsuario{
     		return $obSql->fetchAll(PDO::FETCH_ASSOC);
     		
     	} catch (Exception $e) {
-    		print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
-    		GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+    		print($e->getMessage());
     	}
     }
 
@@ -91,8 +88,7 @@ class DaoUsuario{
 
             return $obSql->execute();
         } catch (Exception $e) {
-            print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
-            GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+        	print($e->getMessage());
         }
     }
 
@@ -104,8 +100,7 @@ class DaoUsuario{
             $obSql->execute();
             return $this->populaUsuario($obSql->fetch(PDO::FETCH_ASSOC));
         } catch (Exception $e) {
-            print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
-            GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+        	print($e->getMessage());
         }
     }
 
@@ -117,8 +112,7 @@ class DaoUsuario{
             $obSql->execute();
             return $this->populaUsuario($obSql->fetch(PDO::FETCH_ASSOC));
         } catch (Exception $e) {
-            print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG do mesmo, tente novamente mais tarde.";
-            GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+        	print($e->getMessage());
         }
     }
 

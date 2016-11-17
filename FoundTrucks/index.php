@@ -5,6 +5,7 @@
 <html lang="pt-br">
 <head>
 <title>Found Truck</title>
+<link rel="icon" href="images/logo.png"> 
 
 <meta charset="UTF-8">
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />

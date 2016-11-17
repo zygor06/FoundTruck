@@ -39,8 +39,7 @@ class DaoFoodtruck{
 			print("Inserido com sucesso no banco!");
 		} catch (Exception $e) {
 			echo gethostbyname("host.name.tld");
-			print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG, tente novamente mais tarde<br />.";
-			print("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+			print($e->getMessage());
 		}
 	}
 
@@ -63,8 +62,7 @@ class DaoFoodtruck{
 
 			return $obSql->execute();
 		} catch (Exception $e) {
-			print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG, tente novamente mais tarde.";
-			GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+			print($e->getMessage());
 		}
 	}
 
@@ -85,8 +83,7 @@ class DaoFoodtruck{
 
 			return $obSql->execute();
 		} catch (Exception $e) {
-			print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG, tente novamente mais tarde.";
-			GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+			print($e->getMessage());
 		}
 	}
 
@@ -98,8 +95,7 @@ class DaoFoodtruck{
 
 			return $obSql->execute();
 		} catch (Exception $e) {
-			print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG, tente novamente mais tarde.";
-			GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+			print($e->getMessage());
 		}
 	}
 
@@ -113,8 +109,7 @@ class DaoFoodtruck{
 			// return $obSql->fetchAll(PDO::FETCH_ASSOC);
 			return $obSql->fetchAll();
 		} catch (Exception $e) {
-			print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG, tente novamente mais tarde.";
-			GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+			print($e->getMessage());
 		}
 	}
 
@@ -130,8 +125,22 @@ class DaoFoodtruck{
     		return $obSql->fetchAll(PDO::FETCH_ASSOC);
     		
     	} catch (Exception $e) {
-    		print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG, tente novamente mais tarde.";
-    		GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+    		print($e->getMessage());
+    	}
+    }
+    
+    public function recuperaPorId($id) {
+    	try {
+    		$stSql = "SELECT * FROM TB_FOODTRUCK WHERE NR_ID = :NR_ID;";
+    		$obSql = Conexao::getInstance()->prepare($stSql);
+    		$obSql->bindValue(":NR_ID", $id);  
+    		
+    		$obSql->execute();
+    
+    		return $obSql->fetchAll();
+    
+    	} catch (Exception $e) {
+    		print($e->getMessage());
     	}
     }
 
@@ -141,10 +150,10 @@ class DaoFoodtruck{
 			$stSql = "SELECT * FROM TB_FOODTRUCK ORDER BY TE_NOME";
 			$obSql = Conexao::getInstance()->prepare($stSql);
 			$obSql->execute();
+
 			return $obSql->fetchAll();
 		} catch (Exception $e) {
-			print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG, tente novamente mais tarde.";
-			GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+			print($e->getMessage());
 		}
 	}
 
@@ -157,8 +166,7 @@ class DaoFoodtruck{
 			$obSql->execute();
 			return $obSql->fetchColumn(0);
 		} catch (Exception $e) {
-			print "Ocorreu um erro ao tentar executar esta ação, foi gerado um LOG, tente novamente mais tarde.";
-			GeraLog::getInstance()->inserirLog("Erro: Código: " . $e->getCode() . " Mensagem: " . $e->getMessage());
+			print($e->getMessage());
 		}
 	}
 	

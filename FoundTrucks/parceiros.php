@@ -46,7 +46,7 @@
 
 					<header class="major">
 						<h2>Food Trucks</h2>
-						<p>Aqui você encontra a lista de Food Trucks parceiros</p>
+						<p>Aqui vocÃª encontra a lista de Food Trucks parceiros</p>
 					</header>
 
 					<h4>Pesquisar</h4>
@@ -82,7 +82,7 @@
 							echo '
 								<div class="row">
 									<div class="col-md-12">
-										<a href="detalhes.html"><h4 class="tituloFoodtruck">'.$nome.'</h4></a>
+										<a onclick="window.location.href=\'/detalhes.php?id='.$id.'\'"><h4 class="tituloFoodtruck">'.$nome.'</h4></a>
 										<p class="descricaoFoodtruck"><a href="detalhes.html"><span class="image left"><img src="images/foodtrucks/lista/logo'.$id.'.jpg" alt="" /></span></a>'.$descricao.'</p>
 									</div>
 								</div>
@@ -94,13 +94,13 @@
 					
 					<!-- <br><br><br><br><br><br>
 					<ul class="pagination">
-						<li><a href="#">Â«</a></li>
+						<li><a href="#">Ã‚Â«</a></li>
 						<li><a class="active" href="#">1</a></li>
 						<li><a href="#">2</a></li>
 						<li><a href="#">3</a></li>
 						<li><a href="#">4</a></li>
 						<li><a href="#">5</a></li>
-						<li><a href="#">Â»</a></li>
+						<li><a href="#">Ã‚Â»</a></li>
 					</ul> -->
 
 				</div>

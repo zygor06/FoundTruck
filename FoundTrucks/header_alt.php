@@ -1,6 +1,6 @@
 <header id="header">
 	<h1>
-		<a href="/">FoundTruck</a>
+		<a id="logo-name" href="/">FoundTruck</a>
 	</h1>
 
 	<nav id="nav">

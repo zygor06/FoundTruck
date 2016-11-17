@@ -1,0 +1,26 @@
+[16-11-2016, 23:44:41] Erro: Código: 2002 Mensagem: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Este host não é conhecido. 
+
+[16-11-2016, 23:45:54] Erro: Código: 2002 Mensagem: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Este host não é conhecido. 
+
+[16-11-2016, 23:49:49] Erro: Código: 1045 Mensagem: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[16-11-2016, 23:50:00] Erro: Código: 1045 Mensagem: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[16-11-2016, 23:50:23] Erro: Código: 1045 Mensagem: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[16-11-2016, 23:50:49] Erro: Código: 1045 Mensagem: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[16-11-2016, 23:54:04] Erro: Código: 1045 Mensagem: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[16-11-2016, 23:56:58] Erro: Código: 1045 Mensagem: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[16-11-2016, 23:57:22] Erro: Código: 1045 Mensagem: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[17-11-2016, 00:09:24] Erro: Código: 1045 Mensagem: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[17-11-2016, 00:10:44] Erro: Código: 1045 Mensagem: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[17-11-2016, 00:13:40] Erro: Código: 1045 Mensagem: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[17-11-2016, 00:14:04] Erro: Código: 1045 Mensagem: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
