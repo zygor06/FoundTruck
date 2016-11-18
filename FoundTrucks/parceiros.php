@@ -46,14 +46,18 @@
 
 					<header class="major">
 						<h2>Food Trucks</h2>
-						<p>Aqui vocÃª encontra a lista de Food Trucks parceiros</p>
+						<p>Aqui você encontra a lista de Food Trucks parceiros</p>
 					</header>
+
+					<!-- PESQUISA
 
 					<h4>Pesquisar</h4>
 					<div class="6u 12u$(4)">
 						<input type="text" name="name" id="name" value="" placeholder="Name" />
 						<br>
 					</div>
+					
+					-->
 
 					<!-- <h4>Filtrar por tipo</h4>
 					<div class="6u$ 12u$(4)">

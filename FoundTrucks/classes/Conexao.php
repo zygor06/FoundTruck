@@ -1,11 +1,11 @@
 <?php 
 
-//definindo as constantes de conexão
+//definindo as constantes de conexÃ£o
 
-define('CONST_HOST', "localhost");
-define('CONST_USER', "root");
-define('CONST_PASSWORD', "");
-define('CONST_DATABASE', "db_foundtruck");
+define('CONST_HOST', "mysql.hostinger.com.br");
+define('CONST_USER', "u535880461_admin");
+define('CONST_PASSWORD', "uShlSI7GMf");
+define('CONST_DATABASE', "u535880461_db");
 
 class Conexao{
 
